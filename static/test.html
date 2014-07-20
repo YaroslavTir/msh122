@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-controller="app"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" ng-controller="app"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" ng-controller="app"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" ng-controller="app"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>АРМ Администратора</title>
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/vendor/angular-bootstrap-colorpicker/css/colorpicker.css">
+    <link rel="stylesheet" href="/vendor/angular-grid/css/ng-grid.css">
+    <link rel="stylesheet" href="/vendor/flags/flags.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/xeditable/css/xeditable.css">
+    <link rel="stylesheet" href="/vendor/datepicker/css/datepicker.css">
+    <link rel="stylesheet" href="/vendor/angucomplete/angucomplete.css">
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script data-main="/js/load_test.js" src="/vendor/requirejs/require.js"></script>
+</head>
+<body>
+<div id="main-menu" class="container" ng-show="applicationInitialized" hidden="hidden">
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a style="padding-top: 5px; height: 60px; font-size: 16px;" class="navbar-brand" href="/schema"><img
+                        src='/img/logo.png'></a>
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li ng-class="{active: isMenuActive('schema')}" ng-show="hasRole('ADMIN')">
+                            <a style="margin-top: 5px; font-size: 16px;" href="/schema">
+                                <span class="glyphicon glyphicon-wrench"></span>
+                                {{messages['menu.title.metro']}}
+                            </a>
+                        </li>
+                        <li ng-class="{active: isMenuActive('passenger-message')}" ng-show="hasRole('ADMIN')">
+                            <a style="margin-top: 5px; font-size: 16px;" href="/passenger-messages">
+                                <span class="glyphicon glyphicon-envelope"></span>
+                                {{messages['menu.title.passenger-message']}}
+                            </a>
+                        </li>
+                        <li ng-class="{active: isMenuActive('im-statistic')}" ng-show="hasRole('ADMIN')">
+                            <a style="margin-top: 5px; font-size: 16px;" href="/im-statistic">
+                                <span class="glyphicon glyphicon-list-alt"></span>
+                                {{messages['menu.title.im.statistic']}}
+                            </a>
+                        </li>
+                        <li ng-class="{active: isMenuActive('content')}" ng-show="hasRole('ADMIN')">
+                            <a style="margin-top: 5px; font-size: 16px;" href="/content">
+                                <span class="glyphicon glyphicon-th-large"></span>
+                                {{messages['menu.title.content']}}
+                            </a>
+                        </li>
+                        <li ng-class="{active: isMenuActive('users')}" ng-show="hasRole('ADMIN')">
+                            <a style="margin-top: 5px; font-size: 16px;" href="/users">
+                                <span class="glyphicon glyphicon-user"></span>
+                                {{messages['menu.title.users']}}
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav pull-right" ng-show="user">
+                        <li class="nav-divider divider"></li>
+                        <li><a style="margin-top: 5px; font-size: 16px;" href="">{{user.username}}</a></li>
+                        <li><a style="margin-top: 5px; font-size: 16px;" href="" ng-click="logout()">{{messages['login.button.logout']}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" ng-show="applicationInitialized">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="build-info" build-info build-info-object="buildInfo" style="margin-top: 40px"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container" ng-show="applicationInitialized" style="margin-top: 40px">
+    <div class="row">
+        <div class="container-fluid">
+            <div id="view-container" class="row clearfix">
+                <div class="col-md-12" ng-view></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

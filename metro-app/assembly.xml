@@ -1,0 +1,27 @@
+<assembly>
+    <id>bundle</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <fileSets>
+        <fileSet>
+            <directory>../config</directory>
+            <outputDirectory>config</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>../static</directory>
+            <outputDirectory>static</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>target/lib</directory>
+            <outputDirectory>lib</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>target/</directory>
+            <outputDirectory></outputDirectory>
+            <includes>
+                <include>metro-app-*.jar</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>

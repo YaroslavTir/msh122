@@ -1,0 +1,1 @@
+ALTER TABLE station_plan_settings add items bytea;

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" ?>
+<schema name="Московская">
+    <line name="Сокольническая" number="1" picLink= "../img/shema_1.png">
+        <station name="Улица Подбельского">
+        </station>
+        <station name="Черкизовская">
+        </station>
+        <station name="Преображенская площадь">
+        </station>
+        <station name="Сокольники">
+        </station>
+        <station name="Красносельская">
+        </station>
+        <station name="Комсомольская">
+        </station>
+        <station name="Красные ворота">
+        </station>
+        <station name="Чистые пруды">
+        </station>
+        <station name="Лубянка">
+        </station>
+        <station name="Охотный ряд">
+        </station>
+        <station name="Библиотека имени Ленина">
+        </station>
+        <station name="Кропоткинская">
+        </station>
+        <station name="Парк культуры">
+        </station>
+        <station name="Фрунзенская">
+        </station>
+        <station name="Спортивная">
+        </station>
+        <station name="Воробьёвы горы">
+        </station>
+        <station name="Университет">
+        </station>
+        <station name="Проспект Вернадского">
+        </station>
+        <station name="Юго-Западная">
+        </station>
+    </line>
+    <line name="Замоскворецкая" number="2" picLink= "../img/shema_2.png">
+        <station name="Алма-Атинская">
+        </station>
+        <station name="Красногвардейская">
+        </station>
+        <station name="Домодедовская">
+        </station>
+        <station name="Орехово">
+        </station>
+        <station name="Царицыно">
+        </station>
+        <station name="Кантемировская">
+        </station>
+        <station name="Каширская">
+        </station>
+        <station name="Коломенская">
+        </station>
+        <station name="Автозаводская">
+        </station>
+        <station name="Павелецкая">
+        </station>
+        <station name="Новокузнецкая">
+        </station>
+        <station name="Театральная">
+        </station>
+        <station name="Тверская">
+        </station>
+        <station name="Маяковская">
+        </station>
+        <station name="Белорусская">
+        </station>
+        <station name="Динамо">
+        </station>
+        <station name="Аэропорт">
+        </station>
+        <station name="Сокол">
+        </station>
+        <station name="Войковская">
+        </station>
+        <station name="Водный стадион">
+        </station>
+        <station name="Речной вокзал">
+        </station>
+    </line>
+</schema>
+

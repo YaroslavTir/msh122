@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-md-4">
+            <b>{{messages['im.statistic.dialog.view.label.im.name']}}:</b>
+        </div>
+        <div class="col-md-8">
+            {{statistic.imName}}
+        </div>
+    </div>
+    <p></p>
+    <div class="row clearfix">
+        <div class="col-md-4">
+            <b>{{messages['im.statistic.dialog.view.label.from']}}:</b>
+        </div>
+        <div class="col-md-8">
+            {{statistic.from | date: 'yyyy-MM-dd HH:mm:ss'}}
+        </div>
+    </div>
+    <p></p>
+    <div class="row clearfix">
+        <div class="col-md-4">
+            <b>{{messages['im.statistic.dialog.view.label.to']}}:</b>
+        </div>
+        <div class="col-md-8">
+            {{statistic.to | date: 'yyyy-MM-dd HH:mm:ss'}}
+        </div>
+    </div>
+    <p></p>
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <b>{{messages['im.statistic.dialog.view.label.event.data']}}</b>
+        </div>
+    </div>
+    <div class="row clearfix" ng-repeat="event in statistic.events">
+        <div class="col-md-4">
+            <b>{{messages['im.statistic.dialog.view.label.' + event.event]}}:</b>
+        </div>
+        <div class="col-md-8">
+            {{event.fires}}
+        </div>
+    </div>
+</div>
+

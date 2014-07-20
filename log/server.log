@@ -1,0 +1,72 @@
+2014-07-20 12:50:04,830 688  [main] INFO  com.fls.metro.app.Start [] - Start application
+2014-07-20 12:50:12,985 8843 [main] INFO  c.f.m.core.config.PropertiesBuilder [] - Run with profile: ymolodkov
+2014-07-20 12:50:15,961 11819 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Execute lib jobs
+2014-07-20 12:50:15,965 11823 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Start db migration job
+2014-07-20 12:50:18,878 14736 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Done db migration job in 2885 ms
+2014-07-20 12:50:18,879 14737 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Start add admin job
+2014-07-20 12:50:19,271 15129 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Done add admin job in 392 ms
+2014-07-20 12:50:19,272 15130 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Start default data job
+2014-07-20 12:50:19,276 15134 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Done default data job in 4 ms
+2014-07-20 12:50:19,276 15134 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Start load external data job
+2014-07-20 12:50:19,291 15149 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Done load external data job in 14 ms
+2014-07-20 12:50:20,090 15948 [main] ERROR com.fls.metro.app.Start [] - Application error : {}
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jetty': Invocation of init method failed; nested exception is org.codehaus.groovy.runtime.typehandling.GroovyCastException: Cannot cast object 'org.springframework.context.support.ClassPathXmlApplicationContext@57e1b0c: startup date [Sun Jul 20 12:50:05 MSK 2014]; root of context hierarchy' with class 'org.springframework.context.support.ClassPathXmlApplicationContext' to class 'org.springframework.web.context.WebApplicationContext'
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:136) ~[spring-beans-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsBeforeInitialization(AbstractAutowireCapableBeanFactory.java:407) ~[spring-beans-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1545) ~[spring-beans-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:539) ~[spring-beans-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:475) ~[spring-beans-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:304) ~[spring-beans-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:228) ~[spring-beans-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:300) ~[spring-beans-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:195) ~[spring-beans-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:703) ~[spring-beans-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:760) ~[spring-context-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:482) ~[spring-context-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139) ~[spring-context-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93) ~[spring-context-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at com.fls.metro.app.Start.main(Start.groovy:26) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:120) [idea_rt.jar:na]
+Caused by: org.codehaus.groovy.runtime.typehandling.GroovyCastException: Cannot cast object 'org.springframework.context.support.ClassPathXmlApplicationContext@57e1b0c: startup date [Sun Jul 20 12:50:05 MSK 2014]; root of context hierarchy' with class 'org.springframework.context.support.ClassPathXmlApplicationContext' to class 'org.springframework.web.context.WebApplicationContext'
+	at org.codehaus.groovy.runtime.typehandling.DefaultTypeTransformation.castToType(DefaultTypeTransformation.java:371) ~[groovy-all-2.2.2.jar:2.2.2]
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.castToType(ScriptBytecodeAdapter.java:599) ~[groovy-all-2.2.2.jar:2.2.2]
+	at com.fls.metro.app.server.Jetty.createHandler(Jetty.groovy:69) ~[classes/:na]
+	at com.fls.metro.app.server.Jetty.run(Jetty.groovy:48) ~[classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0]
+	at java.lang.reflect.Method.invoke(Method.java:483) ~[na:1.8.0]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:349) ~[spring-beans-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeInitMethods(InitDestroyAnnotationBeanPostProcessor.java:300) ~[spring-beans-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeInitialization(InitDestroyAnnotationBeanPostProcessor.java:133) ~[spring-beans-4.0.3.RELEASE.jar:4.0.3.RELEASE]
+	... 19 common frames omitted
+2014-07-20 12:51:23,847 412  [main] INFO  com.fls.metro.app.Start [] - Start application
+2014-07-20 12:51:25,210 1775 [main] INFO  c.f.m.core.config.PropertiesBuilder [] - Run with profile: ymolodkov
+2014-07-20 12:51:27,365 3930 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Execute lib jobs
+2014-07-20 12:51:27,369 3934 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Start db migration job
+2014-07-20 12:51:28,228 4793 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Done db migration job in 849 ms
+2014-07-20 12:51:28,228 4793 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Start add admin job
+2014-07-20 12:51:28,344 4909 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Done add admin job in 116 ms
+2014-07-20 12:51:28,344 4909 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Start default data job
+2014-07-20 12:51:28,348 4913 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Done default data job in 3 ms
+2014-07-20 12:51:28,349 4914 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Start load external data job
+2014-07-20 12:51:28,353 4918 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Done load external data job in 4 ms
+2014-07-20 12:51:33,034 9599 [main] INFO  com.fls.metro.app.server.Jetty [] - Server started on localhost:9091
+2014-07-20 12:51:33,101 9666 [main] INFO  com.fls.metro.app.Start [] - Context started in 9251 ms
+2014-07-20 13:03:06,451 392  [main] INFO  com.fls.metro.app.Start [] - Start application
+2014-07-20 13:03:07,963 1904 [main] INFO  c.f.m.core.config.PropertiesBuilder [] - Run with profile: ymolodkov
+2014-07-20 13:03:10,246 4187 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Execute lib jobs
+2014-07-20 13:03:10,250 4191 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Start db migration job
+2014-07-20 13:03:11,115 5056 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Done db migration job in 856 ms
+2014-07-20 13:03:11,115 5056 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Start add admin job
+2014-07-20 13:03:11,220 5161 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Done add admin job in 105 ms
+2014-07-20 13:03:11,221 5162 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Start default data job
+2014-07-20 13:03:11,225 5166 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Done default data job in 4 ms
+2014-07-20 13:03:11,225 5166 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Start load external data job
+2014-07-20 13:03:11,230 5171 [main] INFO  com.fls.metro.core.job.JobExecutor [] - Done load external data job in 5 ms
+2014-07-20 13:03:13,700 7641 [main] INFO  com.fls.metro.app.server.Jetty [] - Server started on localhost:9091
+2014-07-20 13:03:13,720 7661 [main] INFO  com.fls.metro.app.Start [] - Context started in 7266 ms

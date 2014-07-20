@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task="http://www.springframework.org/schema/task"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.fls.metro.core"/>
+
+    <bean id="propertiesHolder" factory-bean="propertiesBuilder" factory-method="build">
+        <constructor-arg>
+            <list>
+                <value>config/properties.groovy</value>
+                <value>config/profiles.groovy</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="props" class="com.fls.metro.core.config.MultiConfigPropertiesFactoryBean" depends-on="propertiesHolder">
+        <constructor-arg name="propertiesHolder" ref="propertiesHolder"/>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" depends-on="props">
+        <property name="properties" ref="props"/>
+    </bean>
+
+    <bean id="validationMessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:validationMessages"/>
+    </bean>
+    <bean id="validationFactory" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <property name="validationMessageSource" ref="validationMessageSource"/>
+    </bean>
+
+    <bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource">
+        <property name="jdbcUrl" value="${db.url}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+        <property name="idleConnectionTestPeriodInMinutes" value="60"/>
+        <property name="idleMaxAgeInMinutes" value="240"/>
+        <property name="maxConnectionsPerPartition" value="30"/>
+        <property name="minConnectionsPerPartition" value="10"/>
+        <property name="partitionCount" value="3"/>
+        <property name="acquireIncrement" value="5"/>
+        <property name="statementsCacheSize" value="100"/>
+    </bean>
+
+    <bean id="hierarchyService" class="com.fls.metro.core.service.HierarchyService">
+        <property name="entityProcessors">
+            <map>
+                <entry key="com.fls.metro.core.data.domain.Im" value-ref="imDao"/>
+                <entry key="com.fls.metro.core.data.domain.Lobby" value-ref="lobbyDao"/>
+                <entry key="com.fls.metro.core.data.domain.Station" value-ref="stationDao"/>
+                <entry key="com.fls.metro.core.data.domain.Line" value-ref="lineDao"/>
+                <entry key="com.fls.metro.core.data.domain.Schema" value-ref="schemaDao"/>
+            </map>
+        </property>
+    </bean>
+
+    <tx:annotation-driven transaction-manager="txManager" proxy-target-class="true"/>
+
+    <bean id="dataSourceProxy" class="org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSourceProxy"/>
+    </bean>
+
+    <bean id="userPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+    <bean id="imPasswordEncoder" class="com.fls.metro.core.security.ImPasswordEncoder"/>
+
+    <task:scheduled-tasks>
+        <task:scheduled ref="notificationService" method="runNotification" fixed-delay="${im.notification.delay}"/>
+    </task:scheduled-tasks>
+
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/metro-api/metro-api.iml" filepath="$PROJECT_DIR$/metro-api/metro-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/metro-app/metro-app.iml" filepath="$PROJECT_DIR$/metro-app/metro-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/metro-core/metro-core.iml" filepath="$PROJECT_DIR$/metro-core/metro-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/metro-external/metro-external.iml" filepath="$PROJECT_DIR$/metro-external/metro-external.iml" />
+      <module fileurl="file://$PROJECT_DIR$/metro-parent.iml" filepath="$PROJECT_DIR$/metro-parent.iml" />
+    </modules>
+  </component>
+</project>
+

@@ -1,0 +1,95 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <server-validation-error errors="errors"></server-validation-error>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-4">
+            <input id="media_file_upload_button_dialog"
+                   type="file"
+                   name="file"
+                   style="position: absolute; visibility: hidden;"/>
+            <a class="btn btn-default" ng-click="pickFile()">{{messages['media.button.add']}}</a>
+        </div>
+        <div class="col-md-4" ng-show="showFileInfo()">
+            {{messages['media.label.file.picked']}}: {{files[0].name}}
+        </div>
+        <div class="col-md-4" ng-show="uploadInProgress">
+            <div class="progress progress-striped active">
+                <div class="progress-bar" role="progressbar" style="width: 100%">
+                    {{messages['media.upload.in.progress']}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <div class="row clearfix">
+                <div class="col-md-6">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType" value="IMAGE_BANNER">
+                            {{messages['media.type.IMAGE_BANNER.size']}}
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType" value="IMAGE_MESSAGE">
+                            {{messages['media.type.IMAGE_MESSAGE.size']}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-6">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType"
+                                   value="IMAGE_SCREENSAVER">
+                            {{messages['media.type.IMAGE_SCREENSAVER.size']}}
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType" value="VIDEO">
+                            {{messages['media.type.VIDEO']}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-6">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType" value="IMAGE_PLAN">
+                            {{messages['media.type.IMAGE_PLAN.size']}}
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType" value="AUDIO">
+                            {{messages['media.type.AUDIO']}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-6">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType" value="IMAGE_INSIDE_TEXT">
+                            {{messages['media.type.IMAGE_INSIDE_TEXT']}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

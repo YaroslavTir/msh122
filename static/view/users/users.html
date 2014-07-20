@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            {{messages['users.header']}}
+        </div>
+    </div>
+    <p></p>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="pull-left">
+                <p><a href="" ng-click="addUser()" role="button" class="btn btn-default" data-toggle="modal">{{messages['users.button.add']}}</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-bordered table-striped table-condensed">
+            <thead>
+            <tr>
+                <th style="width: 20px">{{messages['users.table.title.edit']}}</th>
+                <th style="width: 200px">{{messages['users.table.title.login']}}</th>
+                <th>{{messages['users.table.title.fio']}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in users">
+                <td>
+                    <span style="white-space:nowrap;  position: relative;">
+                        <a href="" title="Редактировать" ng-click="editUser(user)"><i style="color: #555" class="glyphicon glyphicon-edit"></i></a>
+                        <a href="" title="Удалить" ng-click="deleteUser(user)"><i style="color: #555" class="glyphicon glyphicon-trash"></i></a>
+                    </span>
+                </td>
+                <td ng-click="editUser(user)">{{user.username}}</td>
+                <td>{{user.fio}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

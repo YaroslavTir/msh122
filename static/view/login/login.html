@@ -1,0 +1,22 @@
+<div class="container" style="margin-top: 60px">
+    <form method="POST" class="form-signin" role="form">
+        <div class="alert-danger text-center" ng-show="authError">{{authError}}</div>
+        <input class="form-control"
+               type="text"
+               ng-model="username"
+               id="input_username"
+               placeholder="{{messages['login.label.login']}}">
+
+        <input class="form-control"
+               type="password"
+               ng-model="password"
+               id="input_password"
+               placeholder="{{messages['login.label.password']}}"/>
+
+        <button type="submit" name="submit" class="btn btn-lg btn-primary btn-block" ng-click="login()">
+            {{messages['login.button.login']}}
+        </button>
+    </form>
+</div>
+
+

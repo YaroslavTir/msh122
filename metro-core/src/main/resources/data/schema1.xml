@@ -1,0 +1,1597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema name="Московская">
+    <line enname="Sokolnicheskaya" name="Сокольническая" number="1" picLink= "../img/schema/schema_1.png" color="#FF2B30">
+        <station name="Улица Подбельского" enname="Ulitsa Podbelskogo">
+            <lobby name = "Северный подземный вестибюль">
+            </lobby>
+            <lobby name = "Южный подземный вестибюль">
+            </lobby>
+        </station>
+        <station name="Черкизовская" enname="Cherkizovskaya">
+            <lobby name = "Северный подземный вестибюль">
+            </lobby>
+            <lobby name = "Южный наземный вестибюль">
+            </lobby>
+        </station>
+        <station name="Преображенская площадь" enname="Preobrazhenskaya Ploshchad">
+            <lobby name = "Северный подземный вестибюль">
+            </lobby>
+            <lobby name = "Южный подземный вестибюль">
+            </lobby>
+        </station>
+        <station name="Сокольники" enname="Sokolniki">
+            <lobby name = "Подземный вестибюль">
+            </lobby>
+            <lobby name = "Промежуточный вестибюль">
+            </lobby>
+            <lobby name = "Наземный вестибюль">
+            </lobby>
+        </station>
+        <station name="Красносельская" enname="Krasnoselskaya">
+            <lobby name = "Подземный вестибюль">
+            </lobby>
+            <lobby name = "Наземный вестибюль">
+            </lobby>
+        </station>
+        <station name="Комсомольская" enname="Komsomolskaya">
+            <lobby name = "Северный подземный вестибюль">
+            </lobby>
+            <lobby name = "Северный наземный вестибюль">
+            </lobby>
+            <lobby name = "Южный наземный вестибюль">
+            </lobby>
+        </station>
+        <station name="Красные ворота" enname="Krasnye Vorota">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Чистые пруды" enname="Chistye Prudy">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Лубянка" enname="Lubyanka">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Охотный ряд" enname="Okhotny Ryad">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Библиотека имени Ленина" enname="Biblioteka Imeni Lenina">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Кропоткинская" enname="Kropotkinskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Парк культуры" enname="Park Kultury">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Фрунзенская" enname="Frunzenskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Спортивная" enname="Sportivnaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Воробьёвы горы" enname="Vorobyovy Gory">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Университет" enname="Universitet">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Проспект Вернадского" enname="Prospekt Vernadskogo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Юго-Западная" enname="Yugo-Zapadnaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+    </line>
+    <line enname="Zamoskvoretskaya" name="Замоскворецкая" number="2" picLink= "../img/schema/schema_2.png" color="#2DA949">
+        <station name="Алма-Атинская" enname="Alma-Atinskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Красногвардейская" enname="Krasnogvardeyskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Домодедовская" enname="Domodedovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Орехово" enname="Orekhovo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Царицыно" enname="Tsaritsyno">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Кантемировская" enname="Kantemirovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Каширская" enname="Kashirskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Коломенская" enname="Kolomenskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Автозаводская" enname="Avtozavodskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Павелецкая" enname="Paveletskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Новокузнецкая" enname="Novokuznetskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Театральная" enname="Teatralnaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Тверская" enname="Tverskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Маяковская" enname="Mayakovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Белорусская" enname="Belorusskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Динамо" enname="Dinamo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Аэропорт" enname="Aeroport">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Сокол" enname="Sokol">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Войковская" enname="Voykovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Водный стадион" enname="Vodny Stadion">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Речной вокзал" enname="Rechnoy Vokzal">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+    </line>
+    <line enname="Arbatsko-Pokrovskaya" name="Арбатско-Покровская" number="3" picLink= "../img/schema/schema_3.png" color="#0456A5">
+        <station name="Щёлковская" enname="Shchyolkovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Первомайская" enname="Pervomayskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Измайловская" enname="Izmaylovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Партизанская" enname="Partizanskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Семёновская" enname="Semyonovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Электрозаводская" enname="Elektrozavodskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Бауманская" enname="Baumanskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Курская" enname="Kurskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Площадь Революции" enname="Ploshchad Revolyutsii">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Арбатская" enname="Arbatskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Смоленская" enname="Smolenskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Киевская" enname="Kiyevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Парк Победы" enname="Park Pobedy">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Славянский бульвар" enname="Slavyansky Bulvar">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Кунцевская" enname="Kuntsevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Молодёжная" enname="Molodyozhnaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Крылатское" enname="Krylatskoye">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Строгино" enname="Strogino">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Мякинино" enname="Myakinino">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Волоколамская" enname="Volokolamskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Митино" enname="Mitino">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Пятницкое шоссе" enname="Pyatnitskoye Shosse">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+    </line>
+    <line enname="Filyovskaya" name="Филевская" number="4" picLink= "../img/schema/schema_4.png" color="#02C8E3">
+        <station name="Кунцевская" enname="Kuntsevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Пионерская" enname="Pionerskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Филевский парк" enname="Filyovsky Park">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Багратионовская" enname="Bagrationovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Фили" enname="Fili">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Кутузовская" enname="Kutuzovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Студенческая" enname="Studencheskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Киевская" enname="Kiyevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Смоленская" enname="Smolenskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Арбатская" enname="Arbatskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Александровский сад" enname="Aleksandrovsky Sad">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Выставочная" enname="Vystavochnaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Международная" enname="Mezhdunarodnaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+    </line>
+    <line enname="Kol'tsevaya" name="Кольцевая" number="5" picLink= "../img/schema/schema_5.png" color="#975C43">
+        <station name="Парк культуры" enname="Park Kultury">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Октябрьская" enname="Oktyabrskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Добрынинская" enname="Dobryninskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Павелецкая" enname="Paveletskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Таганская" enname="Taganskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Курская" enname="Kurskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Комсомольская" enname="Komsomolskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Проспект Мира" enname="Prospekt Mira">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Новослободская" enname="Novoslobodskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Белорусская" enname="Belorusskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Краснопресненская" enname="Krasnopresnenskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Киевская" enname="Kiyevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+    </line>
+    <line enname="Kaluzhsko-Rizhskaya" name="Калужско-Рижская" number="6" picLink= "../img/schema/schema_6.png" color="#E48B02">
+        <station name="Медведково" enname="Medvedkovo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Бабушкинская" enname="Babushkinskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Свиблово" enname="Sviblovo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Ботанический сад" enname="Botanichesky Sad">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="ВДНХ" enname="VDNKh">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Алексеевская" enname="Alekseyevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Рижская" enname="Rizhskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Проспект Мира" enname="Prospekt Mira">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Сухаревская" enname="Sukharevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Тургеневская" enname="Turgenevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Китай-город" enname="Kitay-gorod">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Третьяковская" enname="Tretyakovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Октябрьская" enname="Oktyabrskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Шаболовская" enname="Shabolovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Ленинский проспект" enname="Leninsky Prospekt">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Академическая" enname="Akademicheskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Профсоюзная" enname="Profsoyuznaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Новые Черёмушки" enname="Novye Cheryomushki">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Калужская" enname="Kaluzhskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Беляево" enname="Belyayevo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Коньково" enname="Konkovo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Тёплый стан" enname="Tyoply Stan">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Ясенево" enname="Yasenevo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Новоясеневская" enname="Novoyasenevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+    </line>
+    <line enname="Tagansko-Krasnopresnenskaya" name="Таганско-Краснопресненская" number="7" picLink= "../img/schema/schema_7.png" color="#813A90">
+        <station name="Планерная" enname="Planernaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Сходненская" enname="Skhodnenskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Тушинская" enname="Tushinskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Щукинская" enname="Shchukinskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Октябрьское поле" enname="Oktyabrskoye Pole">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Полежаевская" enname="Polezhayevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Беговая" enname="Begovaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Улица 1905 года" enname="Ulitsa 1905 Goda">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Баррикадная" enname="Barrikadnaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Пушкинская" enname="Pushkinskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Кузнецкий мост" enname="Kuznetsky Most">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Китай-город" enname="Kitay-gorod">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Таганская" enname="Taganskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Пролетарская" enname="Proletarskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Волгоградский проспект" enname="Volgogradsky Prospekt">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Текстильщики" enname="Tekstilshchiki">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Кузьминки" enname="Kuzminki">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Рязанский проспект" enname="Ryazansky Prospekt">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Выхино" enname="Vykhino">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Лермонтовский проспект" enname="Lermontovsky Prospekt">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Жулебино" enname="Zhulebino">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+    </line>
+    <line enname="Kalininskaya" name="Калининская" number="8" picLink= "../img/schema/schema_8.png" color="#FFDF02">
+        <station name="Новокосино" enname="Novokosino">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Новогиреево" enname="Novogireyevo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Перово" enname="Perovo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Шоссе Энтузиастов" enname="Shosse Entuziastov">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Авиамоторная" enname="Aviamotornaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Площадь Ильича" enname="Ploshchad Ilyicha">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Марксистская" enname="Marksistskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Третьяковская" enname="Tretyakovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Волхонка (строится)" enname=" ">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Плющиха (строится)" enname=" ">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Кутузовский проспект (строится)" enname=" ">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Деловой центр" enname="Delovoy Tsentr">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Парк Победы" enname="Park Pobedy">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+    </line>
+    <line enname="Serpukhovsko-Timiryazevskaya" name="Серпуховско-Тимирязевская" number="9" picLink= "../img/schema/schema_9.png" color="#969797">
+        <station name="Алтуфьево" enname="Altufyevo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Бибирево" enname="Bibirevo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Отрадное" enname="Otradnoye">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Владыкино" enname="Vladykino">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Петровско-Разумовская" enname="Petrovsko-Razumovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Тимирязевская" enname="Timiryazevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Дмитровская" enname="Dmitrovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Савёловская" enname="Savyolovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Менделеевская" enname="Mendeleyevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Цветной бульвар" enname="Tsvetnoy Bulvar">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Чеховская" enname="Chekhovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Боровицкая" enname="Borovitskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Полянка" enname="Polyanka">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Серпуховская" enname="Serpukhovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Тульская" enname="Tulskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Нагатинская" enname="Nagatinskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Нагорная" enname="Nagornaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Нахимовский проспект" enname="Nakhimovsky Prospekt">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Севастопольская" enname="Sevastopolskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Чертановская" enname="Chertanovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Южная" enname="Yuzhnaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Пражская" enname="Prazhskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Улица академика Янгеля" enname="Ulitsa Akademika Yangelya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Аннино" enname="Annino">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Бульвар Дмитрия Донского" enname="Bulvar Dmitriya Donskogo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+    </line>
+    <line enname="Lyublinsko-Dmitrovskaya" name="Люблинско-Дмитровская" number="10" picLink= "../img/schema/schema_10.png" color="#A3CA00">
+        <station name="Марьина роща" enname="Maryina Roshcha">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Достоевская" enname="Dostoyevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Трубная" enname="Trubnaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Сретенский бульвар" enname="Sretensky Bulvar">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Чкаловская" enname="Chkalovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Римская" enname="Rimskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Крестьянская застава" enname="Krestyanskaya Zastava">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Дубровка" enname="Dubrovka">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Кожуховская" enname="Kozhukhovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Печатники" enname="Pechatniki">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Волжская" enname="Volzhskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Люблино" enname="Lyublino">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Братиславская" enname="Bratislavskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Марьино" enname="Maryino">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Борисово" enname="Borisovo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Шипиловская" enname="Shipilovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Зябликово" enname="Zyablikovo">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+    </line>
+    <line enname="Kakhovskaya" name="Каховская" number="11" picLink= "../img/schema/schema_11.png" color="#54E6E6">
+        <station name="Каширская" enname="Kashirskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Варшавская" enname="Varshavskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Каховская" enname="Kakhovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+    </line>
+    <line enname="Butovskaya" name="Бутовская" number="12" picLink= "../img/schema/schema_12.png" color="#83AEF1">
+        <station name="Битцевский парк" enname="Bittsevsky Park">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Лесопарковая" enname="Lesoparkovaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Улица Старокачаловская" enname="Ulitsa Starokachalovskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Улица Скобелевская" enname="Ulitsa Skobelevskaya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Бульвар адмирала Ушакова" enname="Bulvar Admirala Ushakova">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Улица Горчакова" enname="Ulitsa Gorchakova">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+        <station name="Бунинская аллея" enname="Buninskaya Alleya">
+            <lobby name = "Вестибюль 1">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+            <lobby name = "Вестибюль 2">
+            </lobby>
+        </station>
+
+    </line>
+</schema>
+

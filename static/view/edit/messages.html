@@ -1,0 +1,39 @@
+<div class="panel-group" id="message_accordion">
+    <div class="panel panel-default" style="overflow: visible">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#message_accordion" href="#collapseImmMessages">
+                    <strong><h3>{{messages['immediate.messages.caption']}}</h3></strong>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseImmMessages" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <immediate-messages object='object' id="object.id" type="type" area="SCREEN">
+                </immediate-messages>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" style="overflow: visible">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#message_accordion" href="#collapseSchMessages">
+                    <strong><h3>{{messages['schedulable.messages.caption']}}</h3></strong>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseSchMessages" class="panel-collapse collapse">
+            <div class="panel-body">
+                <style>
+                    .editable-radiolist label {
+                        display: block;
+                    }
+                </style>
+                <div class="col-md-12">
+                    <message-schedule object="object.messageSchedule"  owner-type="type" owner="object" types='IMAGE' error="errors.messageError"></message-schedule>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

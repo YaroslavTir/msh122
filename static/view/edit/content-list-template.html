@@ -1,0 +1,57 @@
+<div class="container-fluid">
+    <div class="row clearfix">
+        <fieldset><legend class="text-left">{{title}}</legend></fieldset>
+        <table class="table table-bordered table-hover table-condensed" ng-show="object.length>0">
+            <tr style="font-weight: bold">
+                <td style="width:5%"></td>
+                <td style="width:85%">{{messages['content.list.header']}}</td>
+                <td style="width:10%"></td>
+            </tr>
+            <tr ng-repeat="v in object">
+                <td style="white-space: nowrap">
+                    <!-- form -->
+                    <form editable-form name="rowform" ng-show="rowform.$visible"
+                          class="form-buttons form-inline" shown="inserted == v">
+                        <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                        <button type="button" ng-disabled="rowform.$waiting" ng-click="cancel(rowform, v, $index)"
+                                class="btn btn-default">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </form>
+                    <div class="buttons" ng-show="!rowform.$visible">
+                        <button ng-show="contentTypes.length>1" class="btn btn-primary" ng-click="rowform.$show()">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button class="btn btn-danger" ng-click="removeWithConfirmation($index)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </div>
+                </td>
+                <td>
+                        <span ng-show="contentTypes.length>1">
+                                <span editable-radiolist="v.content.type" e-ng-options="ct.value as ct.text for ct in contentTypes" e-name="infoText" e-form="rowform" e-required
+                                      e-style="width:300px">
+                                  {{ messages['media.content.type.' + v.content.type] }} : <a href = "" ng-href="{{printUrl(v)}}" ng-show="printUrl(v)" target="_blank">{{messages['media.content.edit.view']}}</a>
+                                </span>
+                        </span>
+                        <span ng-show="contentTypes.length<=1">
+                                    {{ messages['media.content.type.' + v.content.type] }} : <a href = "" ng-href="{{printUrl(v)}}" ng-show="printUrl(v)" target="_blank">{{messages['media.content.edit.view']}}</a>
+                        </span>
+
+                </td>
+                <td>
+                    <div class="buttons">
+                        <button type="button" ng-disabled="rowform.$waiting || rowform.$visible" class="btn" ng-click="setContent(v)">
+                            {{messages['schema.settings.schedule.button.set.content']}}
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-default" ng-click="add()">{{messages['content.list.add']}}</button>
+        <p></p>
+    </div>
+</div>
+

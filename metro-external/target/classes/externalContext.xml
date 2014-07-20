@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+    <context:component-scan base-package="com.fls.metro.external"/>
+
+    <!--request messages-->
+    <bean id="requestErrorsMessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:requestErrorMessages"/>
+    </bean>
+
+    <beans profile="main">
+        <!--news-->
+        <!--rus-->
+        <int:channel id="inputNewsRssFeedChannelRU"/>
+        <int:channel id="inputNewsItemChannelRU"/>
+
+        <bean id="syndFeedToNewsBunchTransformerRU" class="com.fls.metro.external.transformer.SyndFeedToNewsBunchTransformer">
+            <property name="lang" value="RU"/>
+        </bean>
+
+        <int:inbound-channel-adapter id="newsFeedAdapterRU" channel="inputNewsRssFeedChannelRU" ref="rssReaderRU" method="receive">
+            <int:poller fixed-delay="${content.news.delay}" time-unit="SECONDS"/>
+        </int:inbound-channel-adapter>
+        <int:transformer input-channel="inputNewsRssFeedChannelRU" output-channel="inputNewsItemChannelRU" ref="syndFeedToNewsBunchTransformerRU" method="transform"/>
+        <int:service-activator input-channel="inputNewsItemChannelRU" ref="newsRssFeedMessageHandlerRU"/>
+
+        <bean id="newsRssFeedMessageHandlerRU" class="com.fls.metro.external.handler.NewsRssFeedMessageHandler">
+            <property name="lang" value="RU"/>
+        </bean>
+        <bean id="rssReaderRU" class="com.fls.metro.external.reader.NewsRssReader">
+            <property name="url" value="${content.news.url.ru}"/>
+        </bean>
+        <!--eng-->
+        <int:channel id="inputNewsRssFeedChannelEN"/>
+        <int:channel id="inputNewsItemChannelEN"/>
+
+        <bean id="syndFeedToNewsBunchTransformerEN" class="com.fls.metro.external.transformer.SyndFeedToNewsBunchTransformer">
+            <property name="lang" value="EN"/>
+        </bean>
+
+        <int:inbound-channel-adapter id="newsFeedAdapterEN" channel="inputNewsRssFeedChannelEN" ref="rssReaderEN" method="receive">
+            <int:poller fixed-delay="${content.news.delay}" time-unit="SECONDS"/>
+        </int:inbound-channel-adapter>
+        <int:transformer input-channel="inputNewsRssFeedChannelEN" output-channel="inputNewsItemChannelEN" ref="syndFeedToNewsBunchTransformerEN" method="transform"/>
+        <int:service-activator input-channel="inputNewsItemChannelEN" ref="newsRssFeedMessageHandlerEN"/>
+
+        <bean id="newsRssFeedMessageHandlerEN" class="com.fls.metro.external.handler.NewsRssFeedMessageHandler">
+            <property name="lang" value="EN"/>
+        </bean>
+        <bean id="rssReaderEN" class="com.fls.metro.external.reader.NewsRssReader">
+            <property name="url" value="${content.news.url.en}"/>
+        </bean>
+
+        <!--weather-->
+        <bean id="weatherTask" class="com.fls.metro.external.schedule.WeatherTask"/>
+        <task:scheduled-tasks>
+            <task:scheduled ref="weatherTask" method="run" cron="${content.weather.cron}"/>
+        </task:scheduled-tasks>
+        <!--exchange rate-->
+        <bean id="exchangeRateTask" class="com.fls.metro.external.schedule.ExchangeRateTask"/>
+        <task:scheduled-tasks>
+            <task:scheduled ref="exchangeRateTask" method="run" cron="${content.exchangeRate.cron}"/>
+        </task:scheduled-tasks>
+        <!--info text-->
+        <bean id="scheduledContentTask" class="com.fls.metro.external.schedule.ScheduledContentTask"/>
+        <task:scheduled-tasks>
+            <task:scheduled ref="scheduledContentTask" method="run" cron="${content.schedule.cron}"/>
+        </task:scheduled-tasks>
+    </beans>
+
+</beans>

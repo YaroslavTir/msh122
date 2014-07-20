@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12">
+            {{messages['passenger.message.head.label']}}
+        </div>
+    </div>
+    <p></p>
+    <div class="row clearfix table-bordered">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row clearfix" style="margin-top: 20px">
+                    <div class="col-md-6">
+                        <form method="POST" class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="input_im_name" class="col-sm-4 control-label">{{messages['passenger.message.filter.label.im.name']}}:</label>
+                                <div class="col-sm-4">
+                                    <input class="form-control" type="text" ng-model="filter.imName" id="input_im_name">
+                                </div>
+                            </div>
+                         </form>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-md-12">
+                        <div class="col-md-offset-10">
+                            <a class="btn btn-primary" ng-click="doFilter()">{{messages['default.filter.button.submit']}}</a>
+                            <a class="btn btn-default" ng-click="doClean()">{{messages['default.filter.button.clean']}}</a>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <p></p>
+
+    <div class="row clearfix">
+        <div class="passenger-grid" ng-grid="gridOptions"></div>
+    </div>
+</div>

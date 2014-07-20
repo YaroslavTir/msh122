@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <context:component-scan base-package="com.fls.metro.app"/>
+
+    <bean id="jetty" class="com.fls.metro.app.server.Jetty">
+        <property name="host" value="${server.host}"/>
+        <property name="port" value="${server.port}"/>
+        <property name="restServlets">
+            <list>
+                <bean class="com.fls.metro.app.server.RestServletConfiguration">
+                    <property name="configLocation" value="classpath*:apiAdminContext.xml"/>
+                    <property name="contextPath" value="/api/admin/v1/*"/>
+                    <property name="params">
+                        <map>
+                            <entry key="com.sun.jersey.api.json.POJOMappingFeature" value="true"/>
+                            <entry key="com.sun.jersey.config.property.WadlGeneratorConfig" value="com.fls.metro.api.generator.JsonGeneratorConfig"/>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="com.fls.metro.app.server.RestServletConfiguration">
+                    <property name="configLocation" value="classpath*:apiImContext.xml"/>
+                    <property name="contextPath" value="/api/im/v1/*"/>
+                    <property name="params">
+                        <map>
+                            <entry key="com.sun.jersey.api.json.POJOMappingFeature" value="true"/>
+                            <entry key="com.sun.jersey.config.property.WadlGeneratorConfig" value="com.fls.metro.api.generator.JsonGeneratorConfig"/>
+                        </map>
+                    </property>
+                </bean>
+            </list>
+        </property>
+        <property name="filters">
+            <list>
+                <bean class="com.fls.metro.app.server.FilterConfiguration">
+                    <property name="filterClass" value="org.springframework.web.filter.DelegatingFilterProxy"/>
+                    <property name="filterName" value="springSecurityFilterChain"/>
+                    <property name="urlPattern" value="/*"/>
+                </bean>
+                <bean class="com.fls.metro.app.server.FilterConfiguration">
+                    <property name="filterClass" value="org.springframework.web.filter.CharacterEncodingFilter"/>
+                    <property name="filterName" value="encodingFilter"/>
+                    <property name="urlPattern" value="/*"/>
+                    <property name="initParameters">
+                        <map>
+                            <entry key="encoding" value="UTF-8"/>
+                            <entry key="forceEncoding" value="true"/>
+                        </map>
+                    </property>
+                </bean>
+            </list>    
+        </property>
+        <property name="addStatic" value="${server.staticCfg.addStatic}"/>
+        <property name="staticResourcePath" value="${server.staticCfg.resourcePath}"/>
+    </bean>
+
+    <security:authentication-manager id="userAuthenticationManager">
+        <security:authentication-provider user-service-ref="userService">
+            <security:password-encoder ref="userPasswordEncoder"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <security:authentication-manager id="imAuthenticationManager">
+        <security:authentication-provider user-service-ref="imService">
+            <security:password-encoder ref="imPasswordEncoder"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <bean id="unauthorizedEntryPoint" class="com.fls.metro.app.security.UnauthorizedEntryPoint" />
+    <bean id="authenticationUserProcessingFilter" class="com.fls.metro.app.security.AuthenticationSessionProcessingFilter">
+        <property name="userDetailsService" ref="userService"/>
+        <property name="usernameSessionAttr" value="${common.usernameSessionAttr}"/>
+    </bean>
+    <bean id="authenticationTokenProcessingFilter" class="com.fls.metro.app.security.AuthenticationTokenProcessingFilter">
+        <property name="userDetailsService" ref="imService"/>
+        <property name="validateToken" value="${common.validateImToken}"/>
+    </bean>
+
+    <security:http
+            pattern="/api/admin/**"
+            realm="User protected api"
+            use-expressions="true"
+            auto-config="false"
+            create-session="stateless"
+            entry-point-ref="unauthorizedEntryPoint"
+            authentication-manager-ref="userAuthenticationManager">
+        <security:custom-filter ref="authenticationUserProcessingFilter" position="FORM_LOGIN_FILTER"/>
+
+        <security:intercept-url method="GET" pattern="/api/admin/*/buildinfo/**" access="permitAll"/>
+
+        <security:intercept-url method="GET" pattern="/api/admin/*/login/**" access="permitAll"/>
+        <security:intercept-url method="POST" pattern="/api/admin/*/login/**" access="permitAll"/>
+        <security:intercept-url method="PUT" pattern="/api/admin/*/login/**" access="denyAll"/>
+        <security:intercept-url method="DELETE" pattern="/api/admin/*/login/**" access="denyAll"/>
+
+        <security:intercept-url method="GET" pattern="/api/admin/**" access="hasRole('ADMIN')"/>
+        <security:intercept-url method="POST" pattern="/api/admin/**" access="hasRole('ADMIN')"/>
+        <security:intercept-url method="PUT" pattern="/api/admin/**" access="hasRole('ADMIN')"/>
+        <security:intercept-url method="DELETE" pattern="/api/admin/**" access="hasRole('ADMIN')"/>
+
+    </security:http>
+
+    <security:http
+            pattern="/api/im/**"
+            realm="Im protected api"
+            use-expressions="true"
+            auto-config="false"
+            create-session="stateless"
+            entry-point-ref="unauthorizedEntryPoint"
+            authentication-manager-ref="imAuthenticationManager">
+        <security:custom-filter ref="authenticationTokenProcessingFilter" position="FORM_LOGIN_FILTER"/>
+
+        <security:intercept-url method="POST" pattern="/api/im/*/registration/**" access="permitAll"/>
+
+        <security:intercept-url method="GET" pattern="/api/im/**" access="hasRole('IM')"/>
+        <security:intercept-url method="POST" pattern="/api/im/**" access="hasRole('IM')"/>
+        <security:intercept-url method="PUT" pattern="/api/im/**" access="denyAll"/>
+        <security:intercept-url method="DELETE" pattern="/api/im/**" access="denyAll"/>
+
+    </security:http>
+
+</beans>

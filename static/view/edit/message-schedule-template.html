@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <div class="row clearfix" ng-show="ownerType!='SCHEMA'" style="margin-bottom: 20px">
+        <input type="checkbox" id="override_flag" ng-model="object.own" class="set-settings-checkbox" ng-change="setOwn()"> {{messages['schema.settings.override']}}
+    </div>
+    <div class="row clearfix" ng-show="ownerType!='SCHEMA' && ownerType!=object.ownerType">
+        <hierarchy-info object="owner" delimiter=";" object-type="object.ownerType" prefix="{{messages['schema.settings.owner']}}" display-type page="messages" last-link="true"></hierarchy-info>
+    </div>
+    <div class="row clearfix">
+        <schedule ng-show="object.own" id="message-schedule" object="object" type="type" area="SCREEN" image-type="IMAGE_MESSAGE" audio-enabled="true" error="error" title="{{messages['schema.settings.schedule.caption']}}"></schedule>
+    </div>
+</div>
+

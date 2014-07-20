@@ -1,0 +1,1 @@
+alter table news DROP COLUMN text;

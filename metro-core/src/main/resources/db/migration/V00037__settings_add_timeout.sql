@@ -1,0 +1,1 @@
+alter table settings add screensaver_timeout_sec smallint null;

@@ -1,0 +1,130 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <a href="#" style="color: #555"><span ng-click="editSchema()" class="glyphicon glyphicon-pencil"></span></a>
+            {{messages['schema.button.edit.schema']}}
+        </div>
+    </div>
+    <div class="row clearfix">
+
+        <div class="col-md-3 column " style="width: 21%; padding: 0px">
+            <!--button
+                type="button"
+                class="btn btn-link"
+                ng-click="addLine()">
+                {{messages['schema.button.add.line']}}
+            </button-->
+            <table style="margin-top: 34px">
+                <thead></thead>
+                <tbody>
+                <tr ng-repeat-start="line in schema.lines"
+                    ng-click="setSelected(line, schema.lines, schema)"
+                    ng-attr-class="{{line.isSelected && 'selected'}}">
+                    <td class="top icon">
+                        <div style="width: 35px;">
+                            <span class="glyphicon glyphicon-pencil" ng-click="editLine(line.id)"></span>
+                            <span class="glyphicon glyphicon-trash" ng-click="deleteLine(line.id)"></span>
+                        </div>
+                    </td>
+                    <td class="top img">
+                        <img src={{line.picLink}} class=""/>
+                    </td>
+                </tr>
+                <tr ng-attr-class="{{line.isSelected && 'selected' }}"
+                    ng-click="setSelected(line, schema.lines, schema)"
+                    ng-repeat-end>
+                    <td class="bottom empty"></td>
+                    <td class="bottom text">{{line.name}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-3 column " style="width: 22%; padding-left: 0px; padding-right: 0px">
+            <button
+                    type="button"
+                    class="btn btn-link"
+                    ng-click="addStation()">
+                {{messages['schema.button.add.station']}}
+            </button>
+            <div class="list-group">
+                <a href="#" ng-repeat="station in schema.lines[schema.selectedIndex].stations"
+                   style="border-bottom: 0px; border-top: 0px"
+                   ng-attr-class="{{station.isSelected && 'selected list-group-item' || 'list-group-item' }}"
+                   ng-click="setSelected(station, schema.lines[schema.selectedIndex].stations, schema.lines[schema.selectedIndex])">
+                    <span class="glyphicon glyphicon-pencil" ng-click="editStation(station.id)"></span>
+                    <span class="glyphicon glyphicon-trash" ng-click="deleteStation(station.id)"></span>
+                    {{station.name}}
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3 column" style="width: 17%; padding-left: 0px; padding-right: 0px">
+            <button
+                    type="button"
+                    class="btn btn-link"
+                    ng-click="addLobby()">
+                {{messages['schema.button.add.lobby']}}
+            </button>
+            <div class="list-group">
+                <a href="#" ng-repeat="lobby in schema.lines[schema.selectedIndex].
+                stations[schema.lines[schema.selectedIndex].selectedIndex].lobbies"
+                   style="border-bottom: 0px; border-top: 0px"
+                   ng-attr-class="{{lobby.isSelected && 'selected list-group-item' || 'list-group-item' }}"
+                   ng-click="setSelected(lobby, schema.lines[schema.selectedIndex].
+                stations[schema.lines[schema.selectedIndex].selectedIndex].lobbies, schema.lines[schema.selectedIndex].
+                stations[schema.lines[schema.selectedIndex].selectedIndex])">
+                    <span class="glyphicon glyphicon-pencil" ng-click="editLobby(lobby.id)"></span>
+                    <span class="glyphicon glyphicon-trash" ng-click="deleteLobby(lobby.id)"></span>
+                    {{lobby.name}}
+                </a>
+            </div>
+        </div>
+        <div class="col-md-3 column" style="width: 40%; padding-left: 0px; padding-right: 0px">
+            <button
+                    type="button"
+                    class="btn btn-link"
+                    ng-click="addIm()">
+                {{messages['schema.button.add.im']}}
+            </button>
+            <div class="list-group">
+                <a href="#" class="list-group-item " ng-repeat-start="im in schema.lines[schema.selectedIndex].
+                stations[schema.lines[schema.selectedIndex].selectedIndex].
+                lobbies[schema.lines[schema.selectedIndex].
+                stations[schema.lines[schema.selectedIndex].selectedIndex].selectedIndex].ims"
+                   style="border-bottom: 0px; border-top: 0px; border-right: 0px">
+                    <div class="schema-im">
+                        <span class="glyphicon glyphicon-pencil" ng-click="editIm(im.id)"></span>
+                        <span class="glyphicon glyphicon-trash" ng-click="deleteIm(im.id)"></span>
+                        {{im.name}}
+                    </div>
+                    <div class="schema-im-data">
+                        <label class="control-label">{{messages['schema.im.view.label.imName']}}:</label>
+                        {{im.imName}}
+                    </div>
+                    <div class="schema-im-data">
+                        <label class="control-label">{{messages['schema.im.view.label.ip']}}:</label>
+                        {{im.ip}}
+                    </div>
+                    <div class="schema-im-data">
+                        <label class="control-label">{{messages['schema.im.view.label.position']}}:</label>
+                        {{im.position}}
+                    </div>
+                    <div class="schema-im-data" ng-show="showPort">
+                        <label class="control-label">{{messages['schema.im.view.label.port']}}:</label>
+                        {{im.port}}
+                    </div>
+                    <button
+                            type="button"
+                            class="btn btn-link"
+                            ng-disabled="!im.ip"
+                            ng-click="imStatus(im.imName)">
+                        {{messages['schema.im.button.status']}}
+
+                    </button>
+
+                </a>
+                <hr ng-repeat-end/>
+            </div>
+        </div>
+    </div>
+</div>

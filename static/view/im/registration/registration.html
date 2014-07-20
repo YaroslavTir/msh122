@@ -1,0 +1,110 @@
+<div class="container-fluid" style="margin-top: 50px">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 well">
+            <fieldset>
+                <legend class="text-center">{{messages['registration.welcome']}}</legend>
+            </fieldset>
+            <div class="alert alert-danger" ng-show="false"></div>
+            <form method="POST" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="input_im_username"
+                           class="col-sm-2 control-label">{{messages['registration.imname']}}:</label>
+
+                    <div class="col-sm-10">
+                        <input class="col-md-offset-2 col-md-8" type="text" ng-model="imName" id="input_im_username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-5 col-sm-10">
+                        <button type="submit" name="submit" class="btn btn-info" ng-click="registration()">
+                            {{messages['registration.submit']}}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row" ng-show="token">
+        <div class="col-md-12">
+            <label>{{messages['registration.token']}}:</label> {{token}}
+        </div>
+    </div>
+    <div class="row" ng-show="token">
+        <div class="col-md-2">
+            <a class="btn btn-default" href="" ng-click="getContent()">{{messages['registration.content']}}</a>
+        </div>
+        <div class="col-md-10">
+            <label>
+                <textarea cols="120" rows="50">{{content}}</textarea>
+            </label>
+        </div>
+    </div>
+    <div class="row" ng-show="token">
+        <div class="col-md-2">
+            <div class="row clearfix">
+                <div class="col-md-12">
+                    <a class="btn btn-default" href="" ng-click="sendMessage()">{{messages['registration.send.passenger.message']}}</a>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-12">
+                    <div ng-show="messageResult">{{messageResult}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <form method="POST" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="input_pm_name" class="col-sm-2 control-label">{{messages['registration.send.passenger.message.label.name']}}:</label>
+
+                    <div class="col-sm-10">
+                        <input class="col-md-8" type="text" ng-model="pm.name" id="input_pm_name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="input_pm_contact" class="col-sm-2 control-label">{{messages['registration.send.passenger.message.label.contact']}}:</label>
+
+                    <div class="col-sm-10">
+                        <input class="col-md-8" type="text" ng-model="pm.contact" id="input_pm_contact">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{{messages['registration.send.passenger.message.label.message']}}:</label>
+
+                    <div class="col-sm-10">
+                        <textarea cols="100" rows="20" ng-model="pm.message"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row clearfix" ng-show="token">
+        <div class="col-md-2">
+            <div class="row clearfix">
+                <div class="col-md-12">
+                    <a class="btn btn-default" href="" ng-click="sendStatistic()">{{messages['registration.send.statistic']}}</a>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-12">
+                    <div ng-show="statisticSendResult">{{statisticSendResult}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <form method="POST" class="form-horizontal" role="form">
+                <div class="form-group" ng-repeat="event in statistic.events">
+                    <label class="col-sm-3 control-label">{{messages['registration.send.statistic.label.' +
+                        event.event]}}:</label>
+
+                    <div class="col-sm-9">
+                        <input class="col-md-8" type="text" ng-model="event.fires">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,174 @@
+<div class="container-fluid">
+    <div class="row clearfix">
+        <style>
+            .editable-error {
+                color: red;
+                font-size: 12px
+            }
+        </style>
+
+        <!--fieldset>
+            <legend class="text-left">{{title}}</legend>
+        </fieldset-->
+        <table class="schedule-messages  table table-condensed">
+            <tr ng-repeat="sch in object.schedule">
+                <td class="schedule-messages">
+                    <span class="glyphicon glyphicon-trash"
+                          ng-click="removeScheduleWithConfirmation($index)"></span>
+                    <label class="control-label">{{messages['schema.settings.schedule.start.date']}}:</label>
+                    <input date-picker ng-model="sch.startDate" ng-change="checkDate(sch,$index)" date-value-format
+                           date-format="dd.MM.yyyy"/>
+
+
+                    <label class="control-label">{{messages['schema.settings.schedule.end.date']}}:</label>
+                    <input type="text" date-picker ng-model="sch.endDate" onchange="checkDate(sch,$index)"
+                           date-value-format date-format="dd.MM.yyyy"/>
+
+                    <span class="editable-error" ng-bind="errors[$index]"></span>
+
+                        <table class="schedule-messages1 table table-hover table-condensed">
+                        <!--tr style="font-weight: bold">
+                            <td style="width:10%"></td>
+                            <td style="width:15%">{{messages['schema.settings.schedule.header.startHour']}}</td>
+                            <td style="width:15%">{{messages['schema.settings.schedule.header.endHour']}}</td>
+                            <td style="width:40%">{{messages['schema.settings.schedule.header.content']}}</td>
+                            <td style="width:10%"></td>
+                        </tr-->
+                        <tr ng-repeat="s in sch.content">
+                            <td style="width: 70%">
+                            <!-- form -->
+                            <!--form editable-form name="rowform" ng-show="rowform.$visible"
+                                  onbeforesave="checkPeriod(sch, $data, s, rowform)"
+                                  class="form-buttons form-inline" shown="inserted == s">
+                                <!--button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </button>
+                                <button type="button" ng-disabled="rowform.$waiting" ng-click="cancel(rowform, sch, s, $index)"
+                                        class="btn btn-default">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </button-->
+                            <!--/form-->
+                            <div class="buttons schedule-messages1">
+                                <button class="btn btn-primary" ng-click="editContent(s)">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                                <button class="btn btn-danger"
+                                        ng-click="removeContentWithConfirmation(sch, $index)">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                                <a ng-show="s.content.type=='IMAGE'" href="{{s.content.fileUrl}}" target="_blank">Картинка</a>
+                                <a ng-show="s.content.type=='VIDEO'" href="{{s.content.fileUrl}}" target="_blank">Видео</a>
+                                <!--({{s.updateDate | date:'dd.MM.yyyy HH:mm'}})-->
+                            </div>
+
+                            </td>
+
+                            <td>
+                                <div class="error-message" ng-show="s.errorText">
+                                    {{s.errorText}}
+                                </div>
+                                <span class="editable-wrap editable-select">
+                                    <div class="editable-controls form-group">
+                                        <select
+                                                ng-model="s.startHour"
+                                                ng-options="s for s in hourValues"
+                                                class="form-control ng-pristine ng-valid"
+                                                style="display: inline-block"
+                                                ng-change="checkPeriod(sch, s)">
+                                        </select>
+                                    </div>
+                                </span>
+                                <span class="editable-wrap editable-select">
+                                    <div class="editable-controls form-group">
+                                        <select
+                                                ng-model="s.startMin"
+                                                ng-options="s for s in startMinuteValues"
+                                                class="form-control"
+                                                style="display: inline-block"
+                                                ng-change="checkPeriod(sch, s)">
+                                        </select>
+                                    </div>
+                                </span>
+                                <span class="editable-wrap editable-select">
+                                <div class="editable-controls form-group">
+                                    <select
+                                            ng-model="s.endHour"
+                                            ng-options="s for s in hourValues"
+                                            class="form-control"
+                                            style="display: inline-block"
+                                            ng-change="checkPeriod(sch, s)">
+                                    </select>
+                                </div>
+                                    </span>
+                                <span class="editable-wrap editable-select">
+                                <div class="editable-controls form-group">
+                                    <select
+                                            ng-model="s.endMin"
+                                            ng-options="s for s in endMinuteValues"
+                                            class="form-control"
+                                            style="display: inline-block"
+                                            ng-change="checkPeriod(sch, s)">
+                                    </select>
+                                </div>
+                                </span>
+
+
+                                <!--span editable-select="s.startHour"
+                                      ng-model="s.startHour"
+                                      e-name="startHour" e-form="rowform"
+                                      e-ng-options="s for s in hourValues"
+                                      e-required>
+                                    {{ s.startHour }} :
+                                </span-->
+                                <!--span editable-select="s.startMin" e-name="startMin" e-form="rowform"
+                                      e-ng-options="s for s in startMinuteValues" e-required>
+                                    {{ s.startMin }}
+                                </span>
+
+                                <span editable-select="s.endHour" e-name="endHour" e-form="rowform"
+                                      e-ng-options="s for s in hourValues" e-required>
+                                    {{ s.endHour }}:
+                                </span>
+                                <span editable-select="s.endMin" e-name="endMin" e-form="rowform"
+                                      e-ng-options="s for s in endMinuteValues" e-required>
+                                    {{ s.endMin }}
+                                </span-->
+                            </td>
+
+                            <!--td>
+                                <span editable-radiolist="s.content.type" e-ng-options="ct.value as ct.text for ct in contentTypes" e-name="infoText" e-form="rowform" e-required
+                                      e-style="text-align:left;">
+                                  {{ messages['media.content.type.' + s.content.type] }} : <a href = "" ng-href="{{printUrl(s)}}" ng-show="printUrl(s)" target="_blank">{{messages['media.content.edit.view']}}</a>
+                                </span>
+                            </td-->
+                            <!--td style="white-space: nowrap">
+                                <div class="buttons">
+                                    <button type="button" ng-disabled="rowform.$waiting || rowform.$visible" class="btn" ng-click="setContent(s)">
+                                        {{messages['schema.settings.schedule.button.set.content']}}
+                                    </button>
+                                </div>
+                            </td-->
+                        </tr>
+                    </table>
+
+
+                    <button ng-show="allowedType('IMAGE')" class="schedule-messages1 btn btn-default" ng-click="addContent(sch, 'IMAGE')">
+                        {{messages['schema.settings.schedule.content.add.image']}}
+                    </button>
+                    <button ng-show="allowedType('VIDEO')" class="btn btn-default" ng-click="addContent(sch, 'VIDEO')">
+                        {{messages['schema.settings.schedule.content.add.video']}}
+                    </button>
+                    <!--button class="btn btn-default" ng-click="removeScheduleWithConfirmation($index)">
+                        {{messages['schema.settings.schedule.delete']}}
+                    </button-->
+                    <p/>
+                </td>
+            </tr>
+        </table>
+
+        <button class="btn btn-default" ng-click="addSchedule()">{{messages['schema.settings.schedule.add']}}</button>
+        <p/>
+
+    </div>
+</div>
+

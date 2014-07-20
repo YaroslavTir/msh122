@@ -1,0 +1,1 @@
+update media set media_type = 'IMAGE_BANNER' where media_type = 'IMAGE';

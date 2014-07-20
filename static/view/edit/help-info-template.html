@@ -1,0 +1,144 @@
+<style>
+    .error {color: red}
+</style>
+
+<div class="container-fluid">
+
+    <div class="row clearfix">
+        <div class="col-md-6">
+            <button class="btn btn-default" ng-click="addNewHelpInfo()">{{messages['info.help.add.page']}}</button>
+            <button class="btn btn-default" ng-disabled="!hasSelection() || !isEditable(o.helpInfos[o.selectedIndex])" ng-click="removeCurrentHelpInfo()">{{messages['info.help.delete.page']}}</button>
+        </div>
+        <div class="form-group col-md-6" style="margin-bottom: 50px; float:right;">
+            <button class="btn btn-default" ng-show="isLanguage('RU')" ng-click="setLanguage('EN')" style="float:right;">{{messages['info.help.switch.en']}}</button>
+
+            <button class="btn btn-default" ng-show="isLanguage('EN')" ng-click="setLanguage('RU')" style="float:right;">{{messages['info.help.switch.rus']}}</button>
+
+        </div>
+    </div>
+
+    <div class="row clearfix">
+        <div class="col-md-3 column">
+            <div class="list-group">
+                <a href=""
+                   ng-repeat="helpInfo in o.helpInfos | filter: {language:o.language}"
+                   ng-disabled="!helpInfo || !isEditable(helpInfo)"
+                   ng-attr-class="{{helpInfo.isSelected && 'selected list-group-item' || 'list-group-item' }}"
+                   ng-click="setSelection(helpInfo)" >
+                    <div class="row">
+                    <span class="col-md-10">{{helpInfo.name}}</span>
+                    <span class="col-md-2" ng-show="helpInfo && isEditable(helpInfo)">
+                        <span
+                                class="glyphicon glyphicon-chevron-up"
+                                ng-click="moveUp(helpInfo)"/>
+                        <span
+                            class="glyphicon glyphicon-chevron-down"
+                            ng-click="moveDown(helpInfo)"/>
+                    </span>
+                    </div>
+
+                </a>
+            </div>
+        </div>
+        <div class="col-md-9" ng-show="hasSelection() && o.helpInfos[o.selectedIndex]">
+            <div class="col-sm-12" ng-show="type!=o.helpInfos[o.selectedIndex].objectType">
+                    <hierarchy-info object="object" delimiter=";" object-type="o.helpInfos[o.selectedIndex].objectType" prefix="{{messages['info.help.page.owner']}}" display-type page="help" last-link="true"></hierarchy-info>
+            </div>
+            <label class="col-sm-4 control-label" for="input1">{{messages['info.help.page.name']}}:</label>
+
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="input1" ng-required
+                       ng-model="o.helpInfos[o.selectedIndex].name"
+                       ng-disabled="!hasSelection() || !isEditable(o.helpInfos[o.selectedIndex])">
+                <span class="error" ng-show="isValueEmpty(o.helpInfos[o.selectedIndex],'name')">
+                    {{messages['info.help.page.name.empty']}}
+                </span><br>
+            </div>
+            <label class="col-sm-4 control-label" for="input2">{{messages['info.help.page.title']}}:</label>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" id="input2" required
+                       ng-model="o.helpInfos[o.selectedIndex].title"
+                       ng-disabled="!hasSelection() || !isEditable(o.helpInfos[o.selectedIndex])">
+                <span class="error" ng-show="isValueEmpty(o.helpInfos[o.selectedIndex],'title')">
+                    {{messages['info.help.page.title.empty']}}
+                </span><br>
+            </div>
+            <label class="control-label col-sm-4" for="input3">{{messages['info.help.page.type']}}:</label>
+            <div class="col-sm-12">
+                <select
+                        ng-model="o.helpInfos[o.selectedIndex].helpInfoType"
+                        class="form-control"
+                        id="input3" required
+                        ng-disabled="!hasSelection() || !isEditable(o.helpInfos[o.selectedIndex])"
+                        >
+                    <option selected="o.helpInfos[o.selectedIndex].helpInfoType=='HTML" value="HTML">{{messages['info.help.page.type.html']}}</option>
+                    <option selected="o.helpInfos[o.selectedIndex].helpInfoType=='MEDIA'" value="MEDIA">{{messages['info.help.page.type.media']}}</option>
+                </select>
+                <span class="error" ng-show="isValueEmpty(o.helpInfos[o.selectedIndex],'helpInfoType')">
+                    {{messages['info.help.page.type.empty']}}
+                </span><br>
+            </div>
+
+            <div class="col-sm-12" ng-show="hasSelection()">
+                <div ng-show="hasSelection() && isEditable(o.helpInfos[o.selectedIndex])">
+                    <text-angular ng-show="hasSelection() && isEditable(o.helpInfos[o.selectedIndex])"
+                                  ng-model="currentHtmlText"
+                            >
+
+                    </text-angular>
+                </div>
+                <div ng-show="hasSelection() && !isEditable(o.helpInfos[o.selectedIndex])">
+                    <span id="htmlTextDisplay"></span>
+                </div>
+            </div>
+<!--            <div ng-show="hasSelection() && o.helpInfos[o.selectedIndex].helpInfoType=='MEDIA'">
+                <label class="col-sm-4 control-label" for="videotext">{{messages['info.help.video.text.label']}}:</label>
+                <div ng-show="hasSelection()">
+                    <div class="col-sm-12">
+                        <textarea id="videotext" rows="10" cols="50" class="form-control"
+                                  ng-model="currentHtmlText" ng-disabled="!isEditable(o.helpInfos[o.selectedIndex])"/>
+                    </div>
+                </div>
+            </div>-->
+
+            <div class="col-sm-12" ng-show="hasSelection() && o.helpInfos[o.selectedIndex].helpInfoType=='MEDIA'">
+                <label class="control-label" >{{messages['info.help.video.list.title']}}:</label>
+                <div ng-show="hasSelection() && isEditable(o.helpInfos[o.selectedIndex])">
+                    <info-help-media-list id="video-list" media-type="VIDEO" object="o.helpInfos" index="o.selectedIndex"></info-help-media-list>
+                </div>
+                <div ng-show="hasSelection() && !isEditable(o.helpInfos[o.selectedIndex])">
+                    <table class="table table-bordered table-hover table-condensed">
+                        <tr style="font-weight: bold">
+                            <td style="width:30%">{{messages['info.help.video.title']}}</td>
+                            <td style="width:70%">{{messages['content.list.header']}}</td>
+                        </tr>
+                        <tr ng-repeat="v in o.helpInfos[o.selectedIndex].video">
+                            <td>{{v.title}}</td>
+                            <td>{{ messages['media.content.type.' + v.type] }} : <a href = "" ng-href="{{v.link}}" ng-show="v.link" target="_blank">{{messages['media.content.edit.view']}}</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-sm-12" ng-show="hasSelection() && o.helpInfos[o.selectedIndex].helpInfoType=='MEDIA'">
+                <label class="control-label" >{{messages['info.help.audio.list.title']}}:</label>
+                <div ng-show="hasSelection() && isEditable(o.helpInfos[o.selectedIndex])">
+                    <info-help-media-list id="video-list" media-type="AUDIO" object="o.helpInfos" index="o.selectedIndex"></info-help-media-list>
+                </div>
+                <div ng-show="hasSelection() && !isEditable(o.helpInfos[o.selectedIndex])">
+                    <table class="table table-bordered table-hover table-condensed">
+                        <tr style="font-weight: bold">
+                            <td style="width:30%">{{messages['info.help.video.title']}}</td>
+                            <td style="width:70%">{{messages['content.list.header']}}</td>
+                        </tr>
+                        <tr ng-repeat="v in o.helpInfos[o.selectedIndex].audio">
+                            <td>{{v.title}}</td>
+                            <td>{{ messages['media.content.type.' + v.type] }} : <a href = "" ng-href="{{v.link}}" ng-show="v.link" target="_blank">{{messages['media.content.edit.view']}}</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

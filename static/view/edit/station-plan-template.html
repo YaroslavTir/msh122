@@ -1,0 +1,103 @@
+<div class="container-fluid">
+
+
+            <div class="row clearfix" ng-show="type!='STATION'">
+                <div class="col-md-12">
+                    <input type="checkbox" id="override_flag" ng-model="object.stationPlanSettings.own" class="set-settings-checkbox" ng-change="setOwn()"> {{messages['schema.settings.override']}}
+                </div>
+            </div>
+            <div class="row clearfix" ng-show="type!='STATION' && type!=object.stationPlanSettings.ownerType">
+                <div class="col-md-12">
+                    <hierarchy-info object="object" delimiter=";" object-type="object.stationPlanSettings.ownerType" prefix="{{messages['schema.settings.owner']}}" display-type page="stationplan" last-link="true"></hierarchy-info>
+                </div>
+            </div>
+            <div class="row clearfix" ng-show="object.stationPlanSettings.own">
+                <div class="col-md-12">
+                    <fieldset>
+                        <legend class="text-left">{{messages['station.plan.title']}}</legend>
+                    </fieldset>
+                </div>
+
+            </div>
+
+            <div class="row clearfix" ng-show="object.stationPlanSettings.own">
+                <div class="col-md-4">
+                    <div class="list-group">
+                        <a href = ""
+                           class="list-group-item"
+                           ng-repeat="item in object.stationPlanSettings.items"
+                           ng-class="{selected: isPlanItemSelected(item)}"
+                           ng-click="selectPlanItem(item)">
+                            <div class="row">
+                                <span class="col-md-10">{{messages['station.plan.item.label.' + item.type]}}</span>
+                                <span class="col-md-2" ng-show="item && item.type!='INFO'">
+                                    <span
+                                            class="glyphicon glyphicon-chevron-up"
+                                            ng-click="moveUp(item)"/>
+                                    <span
+                                            class="glyphicon glyphicon-chevron-down"
+                                            ng-click="moveDown(item)"/>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-8" ng-show="selectedPlanItem">
+                    <div class="row clearfix">
+                        <div class="row clearfix">
+                            <div class="col-md-12">
+                                <div class="row clearfix">
+                                    <div class="col-md-12">
+                                        {{messages['station.plan.item.description.label.ru']}}:
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-md-12">
+                                        <textarea rows="5" ng-model="selectedPlanItem.rusText" style="width: 100%"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-md-12">
+                                <div class="row clearfix">
+                                    <div class="col-md-12">
+                                        {{messages['station.plan.item.description.label.en']}}:
+                                    </div>
+                                </div>
+                                <div class="row clearfix">
+                                    <div class="col-md-12">
+                                        <textarea rows="5" ng-model="selectedPlanItem.engText" style="width: 100%"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix" ng-show="object.stationPlanSettings.own">
+                <div class="col-md-12">
+                    <table>
+                        <tr>
+                            <td style="vertical-align: top; text-align: left;width: 50%">
+                                <div>
+                                    <select-image id="rus" url="object.stationPlanSettings.rusUrl"
+                                                  title="{{messages['station.plan.rus']}}" pwidth="50%" pheight="50%"
+                                                  image-type="IMAGE_PLAN" area="STATION_PLAN"/>
+                                </div>
+                            </td>
+                            <td style="vertical-align: top; text-align: left;width: 50%">
+                                <div>
+                                    <select-image id="eng" url="object.stationPlanSettings.engUrl"
+                                                  title="{{messages['station.plan.en']}}" pwidth="50%" pheight="50%"
+                                                  image-type="IMAGE_PLAN" area="STATION_PLAN"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+

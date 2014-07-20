@@ -1,0 +1,59 @@
+#!/bin/sh
+APP_NAME=metro-app
+APP_SERVER_NAME=metro-app
+APP_HOME=/home/metro/metro
+APP_USER=metro
+APP_MAIN_CLASS="com.fls.metro.app.Start"
+
+TMP_DIR=/var/tmp
+PID_FILE=/var/run/${APP_NAME}.pid
+
+JAVA_OPTS="-Xmx4096m -Xms512m -XX:MaxPermSize=128m"
+CLASSPATH=$JAVA_HOME/lib/tools.jar:`find $APP_HOME -name "*.jar" -print |tr '\n' ':'`
+
+case "$1" in
+  start)
+    #
+    # Start app
+    #
+    cd $APP_HOME
+    /bin/jsvc \
+    -user $APP_USER \
+    -home $JAVA_HOME \
+    -cwd $APP_HOME \
+    -Djava.io.tmpdir=$TMP_DIR \
+    -Dfile.encoding=UTF-8 \
+    -wait 10 \
+    -pidfile $PID_FILE \
+    -outfile $APP_HOME/log/${APP_NAME}.out \
+    -errfile '&1' \
+    $JAVA_OPTS \
+    -Dbitronix.tm.serverId=${APP_SERVER_NAME} \
+    -cp $CLASSPATH \
+    ${APP_MAIN_CLASS}
+    exit $?
+    ;;
+
+ stop)
+    #
+    # Stop app
+    #
+    /bin/jsvc \
+    -stop \
+    -pidfile $PID_FILE \
+    ${APP_MAIN_CLASS}
+    exit $?
+    ;;
+
+  restart)
+    #
+    # Restart app
+    #
+    $0 stop
+    sleep 2
+    $0 start
+    ;;
+  *)
+echo "Usage ${APP_NAME} start/stop"
+exit 1;;
+esac

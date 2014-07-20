@@ -1,0 +1,1 @@
+alter table line add column color varchar(32);

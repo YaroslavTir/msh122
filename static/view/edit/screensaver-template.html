@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="row clearfix" ng-show="type!='SCHEMA'">
+        <div class="col-md-12">
+            <input type="checkbox" ng-checked="isScreensaverEditEnabled()" class="set-settings-checkbox" ng-click="revertScreensaverEdit()"/> {{messages['schema.edit.screensaver.button.enable.edit']}}
+        </div>
+    </div>
+    <div class="row clearfix" ng-show="showHierarchyInfo()">
+        <div class="col-md-12">
+            <hierarchy-info object="object"
+                            delimiter=";"
+                            object-type="object.screensaverInfo.owner"
+                            prefix="{{messages['schema.settings.owner']}}"
+                            page="screensaver"
+                            display-type></hierarchy-info>
+        </div>
+    </div>
+    <p></p>
+    <div class="row clearfix" ng-show="showCurrentSettings() && isScreensaverEditEnabled()">
+        <fieldset><legend class="text-left">{{messages['schema.edit.screensaver.caption']}}</legend></fieldset>
+        <div class="col-md-12">
+            <select-image url="object.screensaverInfo.url" title="{{messages['schema.edit.screensaver.caption']}}" image-type="IMAGE_SCREENSAVER" area="SCREENSAVER" pwidth="50%" pheight="50%"/>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,155 @@
+<div class="container-fluid">
+    <div class="row clearfix" ng-show="!disableUpload && !uploadModal">
+        <div class="col-md-6">
+            <input class="upload-button"
+                   type="file"
+                   name="file"
+                   style="position: absolute; visibility: hidden;"/>
+            <a class="btn btn-default" ng-click="pickFile()">{{messages['media.button.add']}}</a>
+            <!--a class="btn btn-primary" ng-click="upload(files, mediaFileType)" ng-disabled="!showFileInfo()">{{messages['media.button.upload']}}</a-->
+        </div>
+        <div class="col-md-6">
+            <div class="row clearfix">
+                <div class="col-md-6" ng-hide="mediaFileTypeFilter">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType" value="IMAGE_BANNER">
+                            {{messages['media.type.IMAGE_BANNER']}}
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6" ng-hide="mediaFileTypeFilter">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType" value="IMAGE_MESSAGE">
+                            {{messages['media.type.IMAGE_MESSAGE']}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-6" ng-hide="mediaFileTypeFilter">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType"
+                                   value="IMAGE_SCREENSAVER">
+                            {{messages['media.type.IMAGE_SCREENSAVER']}}
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6" ng-hide="mediaFileTypeFilter">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType" value="VIDEO">
+                            {{messages['media.type.VIDEO']}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-6" ng-hide="mediaFileTypeFilter">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType" value="IMAGE_PLAN">
+                            {{messages['media.type.IMAGE_PLAN']}}
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-6" ng-hide="mediaFileTypeFilter">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType" value="AUDIO">
+                            {{messages['media.type.AUDIO']}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-md-6" ng-hide="mediaFileTypeFilter">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="mediaFileType" ng-model="mediaFileType" value="IMAGE_INSIDE_TEXT">
+                            {{messages['media.type.IMAGE_INSIDE_TEXT']}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix" ng-show="!disableUpload && uploadModal">
+        <div class="col-md-12">
+            <a class="btn btn-default" ng-click="openUploadDialog()">{{messages['media.button.add']}}</a>
+        </div>
+    </div>
+    <p></p>
+
+    <div class="row clearfix" ng-show="showFileInfo()">
+        <div class="col-md-6">
+            {{messages['media.label.file.picked']}}: {{files[0].name}}
+        </div>
+        <div class="col-md-6" ng-show="uploadInProgress && !uploadModal">
+            <div class="progress progress-striped active">
+                <div class="progress-bar" role="progressbar" style="width: 100%">
+                    {{messages['media.upload.in.progress']}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <server-validation-error errors="errors"></server-validation-error>
+    <p></p>
+
+    <div class="row clearfix table-bordered" ng-show="showFilter">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row clearfix" style="margin-top: 20px">
+                    <div class="col-md-6">
+                        <form method="POST" class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="input_media_type" class="col-sm-4 control-label">{{messages['media.filter.label.media.type']}}:</label>
+
+                                <div class="col-sm-7">
+                                    <select id="input_media_type" ng-model="filter.mediaType" class="form-control">
+                                        <option value="IMAGE_BANNER">{{messages['media.type.IMAGE_BANNER']}}</option>
+                                        <option value="IMAGE_SCREENSAVER">{{messages['media.type.IMAGE_SCREENSAVER']}}
+                                        </option>
+                                        <option value="IMAGE_PLAN">{{messages['media.type.IMAGE_PLAN']}}</option>
+                                        <option value="IMAGE_MESSAGE">{{messages['media.type.IMAGE_MESSAGE']}}</option>
+                                        <option value="IMAGE_INSIDE_TEXT">{{messages['media.type.IMAGE_INSIDE_TEXT']}}
+                                        </option>
+                                        <option value="VIDEO">{{messages['media.type.VIDEO']}}</option>
+                                        <option value="AUDIO">{{messages['media.type.AUDIO']}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-md-12">
+                        <div class="col-md-offset-10">
+                            <a class="btn btn-primary" ng-click="doFilter()">{{messages['default.filter.button.submit']}}</a>
+                            <a class="btn btn-default"
+                               ng-click="doClean()">{{messages['default.filter.button.clean']}}</a>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <p></p>
+
+    <!--div class="row clearfix" ng-show="enableSelection && selected">
+        <div class="col-md-12">
+            {{messages['media.selected.label']}}: <a ng-href="{{selected}}" target="_blank">{{messages['media.selected.text']}}</a>
+            <a class="btn btn-default"
+               ng-click="cleanSelection()">{{messages['default.filter.button.clean']}}</a>
+        </div>
+    </div-->
+    <p></p>
+
+    <div class="row clearfix">
+        <div ng-class="mediaGridClass" ng-grid="gridOptions"></div>
+    </div>
+</div>

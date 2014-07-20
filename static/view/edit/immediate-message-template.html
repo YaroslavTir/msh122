@@ -1,0 +1,97 @@
+<style>
+    .started {
+        background-color:#CCCCFF;
+    }
+</style>
+
+<div class="container-fluid">
+    <!--div class="row clearfix">
+        <fieldset><legend class="text-left">{{messages['immediate.messages.playing']}}</legend></fieldset>
+        <div ng-show="playing.id" style="border-bottom: 0px solid#ddd; margin-bottom: 50px">
+            <div class="row clearfix">
+                <div class="col-md-12" style="margin-bottom: 20px">
+                    <hierarchy-info object="playing" delimiter=";" object-type="playing.ownerType" prefix="{{messages['immediate.messages.owner']}}" display-type page="messages" last-link="true">   </hierarchy-info>
+                </div>
+                <div class="col-md-12" style="margin-bottom: 20px">
+                    <!--{{ messages['media.content.type.' + playing.content.type] }} : <a href = "" ng-href="{{printUrl(playing)}}" target="_blank">{{messages['media.content.edit.view']}}</a>-->
+    <!--{{ messages['immediate.messages.current'] }} : <a href = "" ng-href="{{printUrl(playing)}}" target="_blank">{{messages['media.content.edit.view']}}</a-->
+<!--/div>
+</div>
+</div>
+<div ng-show="!playing.id">
+<div class="col-md-12" style="margin-bottom: 20px">
+{{ messages['default.absent'] }}
+</div>
+</div>
+</div-->
+    <div class="row clearfix">
+        <!--fieldset><legend class="text-left">{{messages['schema.im.edit.tab.messages.caption']}}</legend></fieldset-->
+        <table class="table table-hover table-condensed">
+            <!--tr style="font-weight: bold">
+                <td style="width:10%"></td>
+                <td style="width:30%">{{messages['immediate.messages.list.content']}}</td>
+                <td style="width:10%"></td>
+                <td style="width:7%">{{messages['immediate.messages.list.created']}}</td>
+                <td style="width:7%">{{messages['immediate.messages.list.start.date']}}</td>
+                <td style="width:7%">{{messages['immediate.messages.list.stop.date']}}</td>
+                <td style="width:5%"></td>
+            </tr-->
+            <tr ng-repeat="v in messageList" class="{{(v.status=='STARTED')?'started':''}}">
+                <td>
+                    <!-- form -->
+                    <!--form editable-form name="rowform" ng-show="rowform.$visible"
+                          class="form-buttons form-inline" shown="inserted == v" onaftersave="saveMessage(v)">
+                        <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                        <button type="button" ng-disabled="rowform.$waiting" ng-click="cancel(rowform,v,$index)"
+                                class="btn btn-default">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </form-->
+                    <div class="buttons" ng-show="!rowform.$visible">
+                        <button ng-disabled='cantEdit(v)' class="btn btn-primary" ng-click="editContent(v)" onaftersave="saveMessage(v)">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button ng-disabled='cantEdit(v)' class="btn btn-danger" ng-click="removeWithConfirmation($index)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                        <a ng-show="v.content.type=='IMAGE'" href="{{v.content.fileUrl}}" target="_blank">Картинка</a>
+                        <a ng-show="v.content.type=='VIDEO'" href="{{v.content.fileUrl}}" target="_blank">Видео</a>
+                        ({{v.updateDate | date:'dd.MM.yyyy HH:mm'}})
+                    </div>
+
+                </td>
+                <!--td>
+                                <span editable-radiolist="v.content.type" e-ng-options="ct.value as ct.text for ct in contentTypes" e-name="infoText" e-form="rowform" e-required
+                                      e-style="text-align:left;">
+                                  {{ messages['media.content.type.' + v.content.type] }} : <a href = "" ng-href="{{printUrl(v)}}" ng-show="printUrl(v)" target="_blank">{{messages['media.content.edit.view']}}</a>
+                                </span>
+                </td-->
+                <!--td style="white-space: nowrap">
+                    <div class="buttons" ng-show="!rowform.$visible">
+                        <button ng-disabled='cantEdit(v)' type="button" ng-disabled="rowform.$waiting" class="btn" ng-click="setContent(v)">
+                            {{messages['schema.settings.schedule.button.set.content']}}
+                        </button>
+                    </div>
+                </td-->
+
+
+
+                <!--td>
+                    {{v.startDate | date:'dd.MM.yyyy HH:mm'}}
+                </td-->
+                <!--td>
+                    {{v.stopDate | date:'dd.MM.yyyy HH:mm'}}
+                </td-->
+                <td>
+                    <button ng-disabled="startStopDisabled(v) || rowform.$visible" class="btn btn-default" ng-click="startstop(v)">{{v.status=='STOPPED'?messages['immediate.messages.start']:messages['immediate.messages.stop']}}</button>
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-default" ng-click="addPicture()">{{messages['immediate.messages.list.add.picture']}}</button>
+        <button class="btn btn-default" ng-click="addVideo()">{{messages['immediate.messages.list.add.video']}}</button>
+        <p></p>
+    </div>
+</div>
+

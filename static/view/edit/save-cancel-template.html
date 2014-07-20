@@ -1,0 +1,9 @@
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        <div class="pull-right">
+            <span>{{editErrorMessage()}}</span>
+            <a class="btn btn-default" ng-click="cancel()">{{messages['default.button.cancel']}}</a>
+            <a class="btn btn-primary" ng-disabled="checkError()" ng-click="save()">{{messages['default.button.save']}}</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="container">
+
+    <div class="row clearfix">
+        <div class="col-md-12">
+            {{messages['schema.line.edit.head.label']}}
+        </div>
+    </div>
+
+    <p>
+        <hierarchy-info object="line" delimiter=">>" object-type="type" display-object-name></hierarchy-info>
+    </p>
+
+    <server-validation-error errors="errors"></server-validation-error>
+
+    <div class="row clearfix" ng-hide="loadData">
+        <div class="col-md-12 column">
+            <div class="container">
+                <div class="row">
+                    <b>{{messages['schema.line.edit.head.label.name']}}:</b>
+                    <a href="" editable-text="line.name">{{line.name || messages['default.value.undefined']}}</a>
+                </div>
+                <div class="row">
+                    <b>{{messages['schema.line.edit.head.label.enname']}}:</b>
+                    <a href="" editable-text="line.enname">{{line.enname || messages['default.value.undefined']}}</a>
+                </div>
+                <div class="row">
+                    <b>{{messages['schema.line.edit.head.label.number']}}:</b>
+                    <a href="" editable-text="line.number">{{line.number || messages['default.value.undefined']}}</a>
+                </div>
+                <div class="row">
+                    <b>{{messages['schema.line.edit.head.label.color']}}:</b>
+                    <a href="" editable-color="line.color">{{line.color || messages['default.value.undefined']}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <save-cancel-object ng-hide="loadData" on-save="onSaveClick()" has-error="hasError()"></save-cancel-object>
+
+    <p>
+    <div class="row">
+        <div class="col-md-12" ng-show="loadData">
+            <div class="progress progress-striped active">
+                <div class="progress-bar" role="progressbar" style="width: 100%">
+                    {{messages['default.load.object']}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" ng-show="updateData">
+            <div class="progress progress-striped active">
+                <div class="progress-bar" role="progressbar" style="width: 100%">
+                    {{messages['default.update.object']}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <edit main-template="mainTemplate"
+          news-template="newsTemplate"
+          help-template="helpTemplate"
+          screensaver-template="screensaverTemplate"
+          banner-settings-template="bannerSettingsTemplate"
+          messages-template="messagesTemplate"
+          object="object"
+          type="type"
+          default-tab="bannersettings"
+          additional-data="additionalData"
+          errors="editErrors"></edit>
+</div>

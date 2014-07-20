@@ -1,0 +1,46 @@
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        <ul class="nav nav-tabs">
+            <li ng-class="{active: isTabActive('main')}" ng-click="selectTab('main')" ng-show="enable.main">
+                <a href="">{{messages['schema.edit.tab.main.caption']}}</a>
+            </li>
+            <li ng-class="{active: isTabActive('bannersettings')}" ng-click="selectTab('bannersettings')"
+                ng-show="enable.bannersettings">
+                <a href="">{{messages['schema.im.edit.tab.banner.settings.caption']}}</a>
+            </li>
+            <!--            <li ng-class="{active: isTabActive('messageschedule')}" ng-click="selectTab('messageschedule')" ng-show="enable.messageschedule">
+                            <a href="">{{messages['schema.im.edit.tab.message.schedule.caption']}}</a>
+                        </li>-->
+            <li ng-class="{active: isTabActive('messages')}" ng-click="selectTab('messages')" ng-show="enable.messages">
+                <a href="">{{messages['schema.im.edit.tab.messages.caption']}}</a>
+            </li>
+            <li ng-class="{active: isTabActive('help')}" ng-click="selectTab('help')" ng-show="enable.help">
+                <a href="">{{messages['schema.edit.tab.help.caption']}}</a>
+            </li>
+            <li ng-class="{active: isTabActive('screensaver')}" ng-click="selectTab('screensaver')"
+                ng-show="enable.screensaver">
+                <a href="">{{messages['schema.edit.tab.screensaver.caption']}}</a>
+            </li>
+            <li ng-class="{active: isTabActive('stationplan')}" ng-click="selectTab('stationplan')"
+                ng-show="enable.stationplan">
+                <a href="">{{messages['schema.edit.tab.station.plan.caption']}}</a>
+            </li>
+            <li ng-class="{active: isTabActive('map')}" ng-click="selectTab('map')" ng-show="enable.map">
+                <a href="">{{messages['schema.edit.tab.map.caption']}}</a>
+            </li>
+            <li ng-class="{active: isTabActive('news')}" ng-click="selectTab('news')" ng-show="enable.news">
+                <a href="">{{messages['schema.edit.tab.news.caption']}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <p></p>
+
+            <div show-data template="{{activeTabTemplate}}" callback="cb"></div>
+            <p></p>
+        </div>
+    </div>
+</div>

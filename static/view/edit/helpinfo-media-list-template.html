@@ -1,0 +1,65 @@
+    <div class="row clearfix col-sm-12">
+        <table class="table table-bordered table-hover table-condensed">
+            <tr style="font-weight: bold">
+                <td style="width:10%"></td>
+                <td style="width:5%">{{messages['info.help.video.index']}}</td>
+                <td style="width:30%">{{messages['info.help.video.title']}}</td>
+                <td style="width:50%">{{messages['content.list.header']}}</td>
+                <td style="width:10%"></td>
+            </tr>
+            <tr ng-repeat="v in contentList">
+                <td style="white-space: nowrap">
+                    <!-- form -->
+                    <form editable-form name="rowform" ng-show="rowform.$visible"
+                          class="form-buttons form-inline" shown="inserted == v">
+                        <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </button>
+                        <button type="button" ng-disabled="rowform.$waiting" ng-click="cancel(rowform, v, $index)"
+                                class="btn btn-default">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </form>
+                    <div class="buttons" ng-show="!rowform.$visible">
+                        <button class="btn btn-primary" ng-click="rowform.$show()">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button class="btn btn-danger" ng-click="removeWithConfirmation($index)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </div>
+                </td>
+                <td>
+                        <span
+                                class="glyphicon glyphicon-chevron-up"
+                                ng-click="moveUp(v)"/>
+                        <span
+                                class="glyphicon glyphicon-chevron-down"
+                                ng-click="moveDown(v)"/>
+
+                </td>
+                <td>
+                    <span editable-text="v.title" e-name="title" e-form="rowform" e-required>
+                        {{ v.title }}
+                    </span>
+                </td>
+                <td>
+                       <!--<span editable-radiolist="v.type" e-ng-options="ct.value as ct.text for ct in contentTypes" e-name="infoText" e-form="rowform" e-required
+                                     e-style="width:300px">-->
+                          {{ messages['media.content.type.' + v.type] }} : <a href = "" ng-href="{{v.link}}" ng-show="v.link" target="_blank">{{messages['media.content.edit.view']}}</a>
+                        <!--</span>-->
+
+                </td>
+                <td>
+                    <div class="buttons">
+                        <button type="button" ng-disabled="rowform.$waiting || rowform.$visible" class="btn" ng-click="setContent(v)">
+                            {{messages['schema.settings.schedule.button.set.content']}}
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-default" ng-click="add()">{{messages['info.help.add.'+mediaType]}}</button>
+        <p></p>
+    </div>
+

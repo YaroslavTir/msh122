@@ -1,0 +1,55 @@
+<div class="container">
+<!--    <div class="row clearfix">
+        <input type="checkbox" id="override_flag" ng-click="override()" ng-model="object.own"
+               style="vertical-align: -1px"> {{messages['schema.settings.override']}}
+    </div>-->
+    <div ng-show="object.own" class="row clearfix">
+        <fieldset>
+            <legend class="text-left">{{messages['schema.settings.show.caption']}}</legend>
+        </fieldset>
+
+        <input type="checkbox" ng-model="object.showCurrency" id="show_cur">
+        <label for="show_cur" class="control-label">{{messages['schema.settings.show.currency.label']}}</label>
+
+        <input type="checkbox" ng-model="object.showWeather" id="show_weather">
+        <label for="show_weather" class="control-label">{{messages['schema.settings.show.weather.label']}}</label>
+
+        <input type="checkbox" ng-model="object.showTime" id="show_time">
+        <label for="show_time" class="control-label">{{messages['schema.settings.show.time.label']}}</label>
+
+        <input type="checkbox" ng-model="object.showLanguages" id="show_lang">
+        <label for="show_lang" class="control-label">{{messages['schema.settings.show.languages.label']}}</label>
+
+        <input type="checkbox" ng-model="object.showExternalNews" id="show_external_news">
+        <label for="show_external_news" class="control-label">{{messages['schema.settings.show.external.news.label']}}</label>
+
+        <p/>
+    </div>
+    <div class="row clearfix" ng-show="object.own">
+        <fieldset>
+            <legend class="text-left">{{messages['schema.settings.em.number.caption']}}</legend>
+        </fieldset>
+        <label for="sos_number"
+               class="control-label">{{messages['schema.settings.em.number.label']}}:</label>
+        <input type="text"
+               ng-model="object.emergencyNumber"
+               id="sos_number"
+               style="width: 200px">
+
+        <p/>
+    </div>
+    <div class="row clearfix" ng-show="object.own">
+        <fieldset>
+            <legend class="text-left">{{messages['schema.settings.ssaver.timeout.caption']}}</legend>
+        </fieldset>
+        <label for="ss_timeout"
+               class="control-label">{{messages['schema.settings.ssaver.timeout.label']}}:</label>
+        <input type="number"
+               ng-model="object.screensaverTimeoutSec"
+               id="ss_timeout"
+               style="width: 100px">
+
+        <p/>
+    </div>
+</div>
+

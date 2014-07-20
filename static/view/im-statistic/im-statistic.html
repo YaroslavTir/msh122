@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12">
+            {{messages['im.statistic.head.label']}}
+        </div>
+    </div>
+    <p></p>
+
+    <div class="row clearfix table-bordered">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row clearfix" style="margin-top: 20px">
+                    <form method="POST" class="form-horizontal" role="form">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="input_im_name" class="col-sm-6 control-label">{{messages['im.statistic.filter.label.im.name']}}:</label>
+                                <div class="col-sm-6">
+                                    <angucomplete id="input_im_name"
+                                                  pause="400"
+                                                  selectedobject="filter.im"
+                                                  url="{{imUrl}}"
+                                                  minlength="1"
+                                                  titlefield="imName"
+                                                  searchingstring="{{messages['default.label.search']}}"
+                                                  inputclass="form-control"></angucomplete>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="input_group_period" class="col-sm-6 control-label">{{messages['im.statistic.filter.label.group.period']}}:</label>
+
+                                <div class="col-sm-6">
+                                    <select id="input_group_period" class="form-control" ng-model="filter.groupPeriod">
+                                        <option value="WEEK">{{messages['im.statistic.filter.group.period.WEEK']}}</option>
+                                        <option value="MONTH">{{messages['im.statistic.filter.group.period.MONTH']}}</option>
+                                        <option value="YEAR">{{messages['im.statistic.filter.group.period.YEAR']}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="input_period_date_from" class="col-sm-6 control-label">{{messages['im.statistic.filter.label.period.date.from']}}:</label>
+
+                                <div class="col-sm-6">
+                                    <input class="form-control" id="input_period_date_from" type="text" date-picker
+                                           data-date-language="ru" ng-model="filter.periodDateFrom" date-value-format
+                                           date-format="dd.MM.yyyy"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="input_period_date_to" class="col-sm-6 control-label">{{messages['im.statistic.filter.label.period.date.to']}}:</label>
+
+                                <div class="col-sm-6">
+                                    <input class="form-control" id="input_period_date_to" type="text" date-picker
+                                           ng-model="filter.periodDateTo" date-value-format date-format="dd.MM.yyyy"/>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-md-12">
+                        <div class="col-md-offset-10">
+                            <a class="btn btn-primary" ng-click="doFilter()">{{messages['default.filter.button.submit']}}</a>
+                            <a class="btn btn-default"
+                               ng-click="doClean()">{{messages['default.filter.button.clean']}}</a>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <p></p>
+
+    <div class="row clearfix">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>{{messages['im.statistic.table.header.period']}}</td>
+                        <td ng-repeat="et in eventTypes">{{messages['im.statistic.table.header.' + et]}}</td>
+                    </tr>
+                </thead>
+                <tbody ng-hide="updateData">
+                    <tr ng-repeat="data in statisticData">
+                        <td>{{data.start | date: 'dd.MM.yyyy'}} {{data.end ? '-' : ''}} {{data.end | date: 'dd.MM.yyyy'}}</td>
+                        <td ng-repeat="et in eventTypes">{{data.eventData[et]}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="col-md-12" ng-show="updateData">
+                <div class="progress progress-striped active">
+                    <div class="progress-bar" role="progressbar" style="width: 100%">
+                        {{messages['default.load.object']}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div ng-show="showFooter" class=""
+     ng-class="{'ui-widget-content': jqueryUITheme, 'ui-corner-bottom': jqueryUITheme}" ng-style="footerStyle()">
+    <div class="ngPagerContainer" style="float: right; margin-top: 10px;" ng-show="enablePaging"
+         ng-class="{'ngNoMultiSelect': !multiSelect}">
+        <div style="float: left; margin-right: 10px; line-height: 25px; min-width: 135px;" class="ngPagerControl">
+            <button type="button" class="ngPagerButton" ng-click="pageBackward()" ng-disabled="cantPageBackward()"
+                    title="{{i18n.ngPagerPrevTitle}}">
+                <div class="ngPagerFirstTriangle ngPagerPrevTriangle"></div>
+            </button>
+            <input class="ngPagerCurrent" min="1" max="{{currentMaxPages}}" type="text"
+                   style="width:30px; height: 24px; margin-top: 1px; padding: 0 4px;"
+                   ng-model="pagingOptions.currentPage"/>
+            <span class="ngGridMaxPagesNumber" ng-show="maxPages() > 0">/ {{maxPages()}}</span>
+            <button type="button" class="ngPagerButton" ng-click="pageForward()" ng-disabled="cantPageForward()"
+                    title="{{i18n.ngPagerNextTitle}}">
+                <div class="ngPagerLastTriangle ngPagerNextTriangle"></div>
+            </button>
+        </div>
+    </div>
+</div>

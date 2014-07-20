@@ -1,0 +1,77 @@
+<div class="container-fluid">
+    <div class="row clearfix" ng-show="ownerType!='SCHEMA'">
+        <div class="col-md-12">
+            <input type="checkbox" id="override_flag" ng-model="object.own" class="set-settings-checkbox" ng-change="setOwn()"> {{messages['schema.settings.override']}}
+        </div>
+    </div>
+    <!--div class="row clearfix" ng-show="object.own">
+        <fieldset><legend class="text-left">{{messages['schema.banner.settings.default.image']}}</legend></fieldset>
+        <div class="col-md-12">
+            <select-image url="object.imageUrl" title="{{messages['schema.banner.settings.default.image']}}" image-type="IMAGE_BANNER" area="BANNER" pwidth="50%" pheight="50%"/>
+        </div>
+    </div-->
+    <div class="row clearfix" ng-show="ownerType!='SCHEMA' && ownerType!=object.ownerType">
+        <div class="col-md-12">
+            <hierarchy-info object="owner" delimiter=";" object-type="object.ownerType" prefix="{{messages['schema.settings.owner']}}" display-type page="bannersettings" last-link="true">   </hierarchy-info>
+        </div>
+    </div>
+
+    <div class="panel-group" id="banner_accordion" ng-show="object.own">
+        <div class="panel panel-default" style="overflow: visible">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#message_accordion" href="#collapseImmMessages">
+                        <strong><h3>{{messages['schema.banner.settings.default.image']}}</h3></strong>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseImmMessages" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <div class="col-md-12">
+                        <select-image url="object.imageUrl" title="{{messages['schema.banner.settings.default.image']}}" image-type="IMAGE_BANNER" area="BANNER" pwidth="50%" pheight="50%"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default" style="overflow: visible">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#message_accordion" href="#collapseBannerVideo">
+                        <strong><h3>{{messages['schema.banner.settings.video.caption']}}</h3></strong>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseBannerVideo" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <content-list ng-show="object.own" id="video-list" object="object.videos" title="{{messages['schema.banner.settings.video.caption']}}" types="['VIDEO']"></content-list>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default" style="overflow: visible">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#message_accordion" href="#collapseSchedule">
+                        <strong><h3>{{messages['schema.banner.settings.schedule.caption']}}</h3></strong>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseSchedule" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <schedule ng-show="object.own" id="banner-schedule" object="object" type="type" area="BANNER" types="['IMAGE']" image-type="IMAGE_BANNER" audio-enabled="false" error="error" title="{{messages['schema.banner.settings.schedule.caption']}}"></schedule>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--div class="row clearfix">
+        <div class="col-md-12">
+
+
+        </div>
+    </div-->
+</div>
+

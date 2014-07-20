@@ -1,0 +1,367 @@
+[
+    {
+        "lang": "EN",
+        "staticContent": {
+            "updateDate": 1401335927574,
+            "stationName": "Butovo",
+            "inactiveDefault": null,
+            "planLink": null,
+            "position": {
+                "lat": null,
+                "lon": null
+            },
+            "number": 2,
+            "color": "#000000",
+            "emergencyNumber": null,
+            "screensaverEnabled": false,
+            "screensaverTimeoutSec": 0
+        },
+        "news": {
+            "updateDate": 1401337452000,
+            "items": [
+                {
+                    "updateDate": 1401286869000,
+                    "title": "TOPIC IN FOCUS: Russia's response to Moldova's integration with EU"
+                },
+                {
+                    "updateDate": 1401283824000,
+                    "title": "Russia able to produce 600m tons of oil annually for 30 years "
+                },
+                {
+                    "updateDate": 1401281134000,
+                    "title": "Rosoboronexport, Rostec acquire shares of Novikombank"
+                },
+                {
+                    "updateDate": 1401274363000,
+                    "title": "Gov't okays non-refundable tickets"
+                },
+                {
+                    "updateDate": 1401273752000,
+                    "title": "Russian wine producers to get state support"
+                },
+                {
+                    "updateDate": 1401269102000,
+                    "title": "Rostec, ICT Group to develop rare earth metals deposit"
+                },
+                {
+                    "updateDate": 1401268599000,
+                    "title": "Transneft to pay higher dividends to state"
+                },
+                {
+                    "updateDate": 1401264081000,
+                    "title": "Winner to build South Stream in Bulgaria named"
+                },
+                {
+                    "updateDate": 1401260949000,
+                    "title": "Opposition attempts coup in Abkhazia"
+                },
+                {
+                    "updateDate": 1401187616000,
+                    "title": "MTS Group posts higher Q1 net"
+                },
+                {
+                    "updateDate": 1401184890000,
+                    "title": "Dobrolet's first flights sold out "
+                },
+                {
+                    "updateDate": 1401182052000,
+                    "title": "Gazprom's rig freed from Greenpeace activists"
+                },
+                {
+                    "updateDate": 1401179995000,
+                    "title": "Gazprom demands advance payment from Ukraine by June 7"
+                },
+                {
+                    "updateDate": 1401178725000,
+                    "title": "Rostelecom reports improved Q1 net"
+                },
+                {
+                    "updateDate": 1401178399000,
+                    "title": "Aeroflot ramps up traffic in January-April"
+                },
+                {
+                    "updateDate": 1401177937000,
+                    "title": "FEATURE: New sanctions to target gold and diamond producers"
+                },
+                {
+                    "updateDate": 1401175318000,
+                    "title": "Moscow Exchange boosts income on Ukrainian conflict"
+                },
+                {
+                    "updateDate": 1401174082000,
+                    "title": "Lukoil seeks to advance gas business"
+                },
+                {
+                    "updateDate": 1401103972244,
+                    "title": ""
+                }
+            ]
+        },
+        "weather": {
+            "updateDate": 1401332400000,
+            "temperature": "14",
+            "image": "5"
+        },
+        "exchangeRate": [
+            {
+                "updateDate": 1401307200000,
+                "currencyName": "USD",
+                "value": "34,4895"
+            },
+            {
+                "updateDate": 1401307200000,
+                "currencyName": "EUR",
+                "value": "47,0161"
+            }
+        ],
+        "help": null,
+        "message": {
+            "type": null,
+            "updateDate": 1401337504765,
+            "content": null
+        },
+        "bannerVideo": {
+            "content": [],
+            "defaultImageUrl": null,
+            "updateDate": 1401103972245
+        },
+        "bannerMessage": {
+            "content": null,
+            "updateDate": 1401337504765
+        },
+        "contentSettings": {
+            "updateDate": null,
+            "showCurrency": true,
+            "showWeather": true,
+            "showTime": true,
+            "showLanguages": true
+        }
+    },
+    {
+        "lang": "RU",
+        "staticContent": {
+            "updateDate": 1401335927574,
+            "stationName": "Царицыно",
+            "inactiveDefault": null,
+            "planLink": null,
+            "position": {
+                "lat": null,
+                "lon": null
+            },
+            "number": 2,
+            "color": "#000000",
+            "emergencyNumber": null,
+            "screensaverEnabled": false,
+            "screensaverTimeoutSec": 0
+        },
+        "news": {
+            "updateDate": 1401337444000,
+            "items": [
+                {
+                    "updateDate": 1401309568000,
+                    "title": "Власти собираются подчинить \"Яндекс\" закону о СМИ"
+                },
+                {
+                    "updateDate": 1401304098000,
+                    "title": "Штурм воинской части в Луганске: солдаты сдались ополченцам"
+                },
+                {
+                    "updateDate": 1401325865000,
+                    "title": "Обама встретится с Порошенко раньше Путина"
+                },
+                {
+                    "updateDate": 1401300784000,
+                    "title": "Порошенко: Подписание соглашения с ЕС пройдет сразу после инаугурации"
+                },
+                {
+                    "updateDate": 1401312033000,
+                    "title": "Сурков и Нургалиев пытаются ночью примирить Абхазию"
+                },
+                {
+                    "updateDate": 1401315078000,
+                    "title": "ЦБ снизил банкам лимит на отмывание"
+                },
+                {
+                    "updateDate": 1401321672000,
+                    "title": "Мэрия представила нового владельца \"Олимпийского\""
+                },
+                {
+                    "updateDate": 1401305363000,
+                    "title": "Госкомпании заставят чтить корпоративный кодекс"
+                },
+                {
+                    "updateDate": 1401333015000,
+                    "title": "Сноуден: Я никогда не работал на Россию"
+                },
+                {
+                    "updateDate": 1401307718000,
+                    "title": "Общественников для власти будут выбирать через интернет"
+                },
+                {
+                    "updateDate": 1401298730000,
+                    "title": "Sollers и ГАЗ отказались от участия в Московском автосалоне "
+                },
+                {
+                    "updateDate": 1401311017000,
+                    "title": "\"ВКонтакте\" покажет чемпионат мира по футболу в Бразилии"
+                },
+                {
+                    "updateDate": 1401290898000,
+                    "title": "Сделка Газпрома с Китаем ускорит рост ВВП России до 2,1%"
+                },
+                {
+                    "updateDate": 1401103972244,
+                    "title": "ыапвыапывапывапывпаравып"
+                }
+            ]
+        },
+        "weather": {
+            "updateDate": 1401332400000,
+            "temperature": "14",
+            "image": "5"
+        },
+        "exchangeRate": [
+            {
+                "updateDate": 1401307200000,
+                "currencyName": "USD",
+                "value": "34,4895"
+            },
+            {
+                "updateDate": 1401307200000,
+                "currencyName": "EUR",
+                "value": "47,0161"
+            }
+        ],
+        "help": {
+            "updateDate": 1401337504840,
+            "items": [
+                {
+                    "updateDate": 1401337504840,
+                    "caption": "яавыпвыпывап",
+                    "data": {
+                        "title": "ывапывап",
+                        "text": "ывапывапывапыва<br/>пывапывапыв<br/>апывапывапывап<br/>",
+                        "images": []
+                    },
+                    "type": "HTML"
+                },
+                {
+                    "updateDate": 1401337504842,
+                    "caption": "Новая страница3",
+                    "data": {
+                        "title": "gfaergsdfg",
+                        "text": "adfgsdfgsdfgsdf<br/>gsdfgsdfgsdfgsdfgsdfg<br/>sdfgsdfgsdfgsdfg<br/>",
+                        "images": []
+                    },
+                    "type": "HTML"
+                },
+                {
+                    "updateDate": 1401337504842,
+                    "caption": "Новая страница",
+                    "data": {
+                        "title": "",
+                        "text": "",
+                        "images": []
+                    },
+                    "type": "HTML"
+                },
+                {
+                    "updateDate": 1401337504842,
+                    "caption": "Новая страница",
+                    "data": {
+                        "title": "",
+                        "text": "",
+                        "images": []
+                    },
+                    "type": "HTML"
+                },
+                {
+                    "updateDate": 1401337504843,
+                    "caption": "яавыпвыпывап",
+                    "data": {
+                        "title": "ывапывап",
+                        "text": "ывапывапывапыва<br/>пывапывапыв<br/>апывапывапывап<br/>",
+                        "images": []
+                    },
+                    "type": "HTML"
+                },
+                {
+                    "updateDate": 1401337504844,
+                    "caption": "яавыпвыпывап",
+                    "data": {
+                        "title": "ывапывап",
+                        "text": "ывапывапывапыва<br/>пывапывапыв<br/>апывапывапывап<br/>",
+                        "images": []
+                    },
+                    "type": "HTML"
+                },
+                {
+                    "updateDate": 1401337504849,
+                    "caption": "Новая страница1231244",
+                    "data": {
+                        "title": "412341234",
+                        "text": "retewrtewrt<br/>ewrtewrtewrt<img src=\"file_f7jqcag0jm2lcdc6i3hi6u6hkf.png\"/><br/>",
+                        "images": [
+                            {
+                                "file": "file_f7jqcag0jm2lcdc6i3hi6u6hkf.png",
+                                "link": "http://localhost:81/images/file_f7jqcag0jm2lcdc6i3hi6u6hkf.png"
+                            }
+                        ]
+                    },
+                    "type": "HTML"
+                },
+                {
+                    "updateDate": 1401337504850,
+                    "caption": "яавыпвыпывап",
+                    "data": {
+                        "title": "ывапывап",
+                        "text": "ывапывапывапыва<br/>пывапывапыв<br/>апывапывапывап<br/>",
+                        "images": []
+                    },
+                    "type": "HTML"
+                },
+                {
+                    "updateDate": 1401337504850,
+                    "caption": "яавыпвыпывап",
+                    "data": {
+                        "title": "ывапывап",
+                        "text": "ывапывапывапыва<br/>пывапывапыв<br/>апывапывапывап<br/>",
+                        "images": []
+                    },
+                    "type": "HTML"
+                },
+                {
+                    "updateDate": 1401337504851,
+                    "caption": "яавыпвыпывап",
+                    "data": {
+                        "title": "ывапывап",
+                        "text": "ывапывапывапыва<br/>пывапывапыв<br/>апывапывапывап<br/>",
+                        "images": []
+                    },
+                    "type": "HTML"
+                }
+            ]
+        },
+        "message": {
+            "type": null,
+            "updateDate": 1401337504765,
+            "content": null
+        },
+        "bannerVideo": {
+            "content": [],
+            "defaultImageUrl": null,
+            "updateDate": 1401103972245
+        },
+        "bannerMessage": {
+            "content": null,
+            "updateDate": 1401337504765
+        },
+        "contentSettings": {
+            "updateDate": null,
+            "showCurrency": true,
+            "showWeather": true,
+            "showTime": true,
+            "showLanguages": true
+        }
+    }
+]

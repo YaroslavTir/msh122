@@ -1,0 +1,153 @@
+<div class="panel-group" id="accordion">
+    <!--info text-->
+    <div class="panel panel-default" ng-show="enableText" style="overflow: visible">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseInfoText">
+                    <strong><h4>{{messages['media.content.edit.sub.title.info.text']}}</h4></strong>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseInfoText" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <text-angular ng-model="data.content.infoText"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default" ng-show="enableImage">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseImage">
+                    <strong><h4>{{messages['media.content.edit.sub.title.image.'+imageType]}}</h4></strong>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseImage" class="panel-collapse collapse">
+            <div class="panel-body">
+                <media disable-delete="true"
+                       columns="name, preview, url"
+                       enable-selection="true"
+                       selection-callback="selectImage(mediaFile)"
+                       clean-callback="cleanImage()"
+                       selected-url="selectedImageUrl"
+                       media-file-type-filter="{{imageType}}"
+                       compact="true"
+                       grid-class="media-grid-modal">
+
+                </media>
+                <div>
+                    <span><input type="radio" ng-model="data.content.size" value="FULLSIZE">{{messages['media.content.edit.image.size.FULLSIZE']}}</input></span>
+                    <span><input type="radio" ng-model="data.content.size" value="MAXSIZE">{{messages['media.content.edit.image.size.MAXSIZE']}}</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default" ng-show="enableColor">
+        <div class="panel-heading" style="height: 45px;">
+            <h5 class="panel-title">
+                <a style="float: left" data-toggle="collapse" data-parent="#accordion" href="#collapseColor">
+                    <strong><h4>{{messages['media.content.edit.sub.title.bg.color']}}</h4></strong>
+                </a>
+                <input type="color"
+                       ng-model="data.content.bgColor"
+                       style="float: left; margin-left: 10px; margin-top: 9px;"></input>
+            </h5>
+        </div>
+        <!--div id="collapseColor" class="panel-collapse collapse">
+            <div class="panel-body">
+
+            </div>
+        </div-->
+    </div>
+
+    <div class="panel panel-default" ng-show="enableVideo">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseVideo">
+                    <strong><h4>{{messages['media.content.edit.sub.title.video']}}</h4></strong>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseVideo" class="panel-collapse collapse">
+            <div class="panel-body">
+                <media disable-delete="true"
+                       columns="name, preview, url"
+                       enable-selection="true"
+                       selection-callback="selectVideo(mediaFile)"
+                       clean-callback="cleanVideo()"
+                       selected-url="selectedVideoUrl"
+                       media-file-type-filter="VIDEO"
+                       compact="true"
+                       grid-class="media-grid-modal">
+
+                </media>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default" ng-show="enableAudio">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseAudio">
+                    <strong><h4>{{messages['media.content.edit.sub.title.audio']}}</h4></strong>
+                </a>
+            </h4>
+        </div>
+        <div id="collapseAudio" class="panel-collapse collapse">
+            <div class="panel-body">
+                <media disable-delete="true"
+                       columns="name, preview, url"
+                       enable-selection="true"
+                       selection-callback="selectAudio(mediaFile)"
+                       clean-callback="cleanAudio()"
+                       selected-url="selectedAudioUrl"
+                       media-file-type-filter="AUDIO"
+                       compact="true"
+                       grid-class="media-grid-modal">
+                </media>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-show="data.content.type=='IMAGE'">
+    <div class="row clearfix">
+        <!--div class="col-md-3">
+            <a class="btn btn-default" ng-click="generateImageWithTextPreview()">{{messages['media.content.edit.button.generate.preview']}}</a>
+        </div>
+        <div class="col-md-9" ng-show="!generateInProgress && data.contentExt.fileUrl">
+            <a ng-href="{{data.contentExt.fileUrl}}" target="_blank">{{messages['media.content.edit.view']}}</a>
+        </div-->
+        <div class="col-md-9" ng-show="generateInProgress">
+            <div class="progress progress-striped active">
+                <div class="progress-bar" role="progressbar" style="width: 100%">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div ng-show="data.content.type=='IMAGE' && !imageOnly">
+    <div class="row clearfix">
+        <div class="col-md-3">
+            {{messages['media.content.edit.sub.title.image']}} :
+        </div>
+        <div class="col-md-9" ng-show="data.content.fileUrl">
+            <a ng-href="{{data.content.fileUrl}}" target="_blank">{{messages['media.content.edit.view']}}</a>
+        </div>
+    </div>
+</div>-->
+<p></p>
+<div ng-show="data.content.audioUrl">
+    <div class="row clearfix">
+        <div class="col-md-3">
+            {{messages['media.content.edit.sub.title.audio.file']}} :
+        </div>
+        <div class="col-md-9">
+            <a ng-href="{{data.content.audioUrl}}" target="_blank">{{messages['media.content.edit.listen']}}</a>
+        </div>
+    </div>
+</div>

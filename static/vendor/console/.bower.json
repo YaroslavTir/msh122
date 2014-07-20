@@ -1,0 +1,22 @@
+{
+  "name": "console",
+  "version": "3.24.10",
+  "main": "console.min.js",
+  "description": "'console' nodejs core module browserify-ied with `--standalone console`. Should support all module systems (commonjs, AMD & `window.console`) - check browserify docs.",
+  "keywords": [
+    "nodejs",
+    "browserify",
+    "console"
+  ],
+  "homepage": "https://github.com/anodynos/node2web_console",
+  "_release": "3.24.10",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.24.10",
+    "commit": "42ff2b62acb424ad893597f1f086d84d823c390b"
+  },
+  "_source": "git://github.com/anodynos/node2web_console.git",
+  "_target": "~3.24.10",
+  "_originalSource": "console",
+  "_direct": true
+}

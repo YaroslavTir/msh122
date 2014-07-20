@@ -1,0 +1,74 @@
+<div class="container">
+
+    <div class="row clearfix">
+        <div class="col-md-12">
+            {{messages['schema.im.edit.head.label']}}
+        </div>
+    </div>
+
+    <p>
+        <hierarchy-info object="im" delimiter=">>" object-type="type" display-object-name></hierarchy-info>
+    </p>
+
+    <server-validation-error errors="errors"></server-validation-error>
+    <div class="row clearfix" ng-hide="loadData">
+        <div class="col-md-6 column">
+            <div class="container">
+                <div class="row">
+                    <b>{{messages['schema.im.edit.head.label.ip']}}:</b> {{im.ip}}
+                </div>
+                <div class="row">
+                    <b>{{messages['schema.im.edit.head.label.imName']}}:</b> {{im.imName}}
+                </div>
+                <div class="row">
+                    <b>{{messages['schema.im.edit.head.label.position']}}:</b>
+                    <a href="" editable-text="im.position">{{im.position || messages['default.value.undefined']}}</a>
+                </div>
+                <div class="row" ng-show="showPort">
+                    <b>{{messages['schema.im.edit.head.label.port']}}:</b>
+                    <a href="" editable-text="im.port">{{im.port || messages['default.value.undefined']}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 column">
+            <save-cancel-object ng-hide="loadData" on-save="onSaveClick()" has-error="hasError()"></save-cancel-object>
+        </div>
+    </div>
+
+    <p>
+    <div class="row">
+        <div class="col-md-12" ng-show="loadData">
+            <div class="progress progress-striped active">
+                <div class="progress-bar" role="progressbar" style="width: 100%">
+                    {{messages['default.load.object']}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" ng-show="updateData">
+            <div class="progress progress-striped active">
+                <div class="progress-bar" role="progressbar" style="width: 100%">
+                    {{messages['default.update.object']}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <edit main-template="mainTemplate"
+          news-template="newsTemplate"
+          help-template="helpTemplate"
+          map-template="mapTemplate"
+          banner-settings-template="bannerSettingsTemplate"
+          messages-template="messagesTemplate"
+          map-create-callback="mapCallback()"
+          screensaver-template="screensaverTemplate"
+          station-plan-template="stationPlanTemplate"
+          object="object"
+          type="type"
+          additional-data="additionalData"
+          default-tab="bannersettings"
+          errors="editErrors"
+          ></edit>
+</div>
